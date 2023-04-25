@@ -1,0 +1,129 @@
+.form-error {
+    border: 1px solid red !important;
+}
+.hide {
+    display: none!important;
+}
+.alertify-notifier {
+    z-index: 9000;
+}
+
+.msg {
+    background: #1e88e5;
+    color: white;
+    padding: 20px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.dashboard-admin {
+    width: 200px;
+    position: fixed;
+    background: #1e88e5;
+    color: #FFFFFF;
+    padding: 10px;
+    z-index: 9999999999;
+    top: 0;
+    text-align: center;
+}
+
+.dashboard-admin .dashboard-title {
+    text-align: center;
+}
+
+.dashboard-admin .dashboard-title a{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.dashboard-edit-link, .dashboard-edit-link:hover {
+    color: #FFFFFF;
+}
+
+.iSearchResults {
+    font-size: 12px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.4), 0 0 20px rgba(51, 51, 51, 0.1);
+    top:100%;
+    z-index: 200;
+    padding:33px;
+    box-sizing:border-box;
+}
+
+.iSearchResults:before{
+    content: "";
+    border-bottom: 15px solid #fff;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    position: absolute;
+    left: 15px;
+    top: -6px;
+}
+
+.iSearchResults .result {
+    padding: 5px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.iSearchResults .result:hover{
+    background: #eff3f4;
+}
+
+.iSearchResults .result:last-child {
+    border: none;
+}
+
+.iSearchResults .group {
+    border-bottom: 1px solid #ccc;
+}
+
+.iSearchResults .group:last-child {
+    border: none;
+}
+
+.iSearchResults .group-title {
+    padding: 5px;
+    font-weight: bold;
+}
+
+.iSearchResults .group-items table{
+    width: 100%;
+}
+
+.iSearchResults a {
+    color: #d1ac92;
+}
+
+.iSearchResults .highlight {
+    font-weight: bold;
+}
+
+.iSearchResults .table .row {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.iSearchResults .table .td {
+    padding: 5px;
+
+}
+
+.iSearchResults .table .td.text {
+    width: 80%;
+    line-height: 17px;
+}
+
+.iSearchResults .result:hover {
+    background: transparent!important;
+}
+.item_btn {
+	
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/vendor/almasaeed2010/adminlte" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower/bootstrap" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower/inputmask" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower/jquery" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower/jquery-ui" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower/punycode" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower/typeahead.js" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower/yii2-pjax" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/cebe/markdown" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/container-interop/container-interop" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dotzero/amocrm" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dotzero/yii2-amocrm" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/egulias/email-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ezyang/htmlpurifier" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/intervention/httpauth" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-fileinput" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-krajee-base" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-mpdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-fileinput" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/linslin/yii2-curl" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/lusitanian/oauth" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mpdf/mpdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mrclay/jsmin-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mrclay/minify" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mrclay/props-dic" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/natxet/CssMin" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nodge/lightopenid" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nodge/yii2-eauth" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpoffice/phpexcel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpspec/php-diff" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pimple/pimple" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/setasign/fpdi" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/skeeks/yii2-assets-auto-compress" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tedivm/jshrink" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tubalmartin/cssmin" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-bootstrap" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-codeception" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-debug" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-faker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-gii" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-httpclient" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-jui" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-swiftmailer" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

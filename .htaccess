@@ -1,0 +1,20 @@
+php_value post_max_size 7M
+php_value upload_max_filesize 7M
+
+Options +FollowSymLinks
+IndexIgnore */*
+
+RewriteEngine on
+RewriteBase /
+
+#RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+#RewriteRule ^(.*)/$ http://%{HTTP_HOST}/$1 [R=301,L]
+
+DirectoryIndex index.php
+RewriteRule ^sitefiles/([0-9a-z]+)/([0-9a-z]+)/(.*)$  /cache/iCacher.php?param=$1&size=$2&file=$3&no_water=1 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ /index.php [L,QSA]
