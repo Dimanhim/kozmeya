@@ -13,7 +13,7 @@ use yii\widgets\Pjax;
         <h1 class="h1-head"><?=Html::encode(\Yii::$app->meta->getPageTitle($page->name));?></h1>
     </header>
     <ul class="list letter-list">
-        <li><a href="/<?=$page->alias;?>" class="act">Все</a></li>
+        <li><a href="/<?=$page->alias;?>" class="act"><?=Yii::$app->langs->t("Все")?></a></li>
 
         <? if(isset($alphabet["en"])) foreach($alphabet["en"] as $letter => $data):?>
             <li><a href="/<?=$page->alias;?>?filters[letter]=<?=$letter;?>"><?=$letter;?></a></li>

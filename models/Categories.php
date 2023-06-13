@@ -21,6 +21,11 @@ use yii\web\UploadedFile;
  */
 class Categories extends \yii\db\ActiveRecord
 {
+    const ID_DESPOKE        = 20;
+    const ID_SEMI_BESPOKE   = 22;
+    const ID_CONVERTED      = 24;
+    const ID_OCCASION       = 47;
+
     /**
      * @inheritdoc
      */
@@ -211,5 +216,14 @@ class Categories extends \yii\db\ActiveRecord
     public function getFilters()
     {
         return $this->hasMany(Filters::className(), ['id' => 'filter_id'])->viaTable('filters_categories', ['category_id' => 'id']);
+    }
+    public function innerCategory($alias)
+    {
+        if($page = Items::findOne(['alias' => $alias])) {
+            if($page->categoryData && ($categoryData = json_decode($page->categoryData, true))) {
+                if($categoryData['id'] == $this->id) return true;
+            }
+        }
+        return false;
     }
 }

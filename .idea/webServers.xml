@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="903994fe-9555-4b00-be80-731b5f8e93aa" name="kozmeya" url="http://j649859.myjino.ru">
-        <fileTransfer host="j649859.myjino.ru" port="21">
+      <webServer id="903994fe-9555-4b00-be80-731b5f8e93aa" name="kozmeya" url="http://31.31.196.138">
+        <fileTransfer host="31.31.196.138" port="21" rootFolder="/www/kozmeya.com">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

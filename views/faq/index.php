@@ -24,12 +24,12 @@ use yii\widgets\Pjax;
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="about-page-title">
-                            <span class="about-page-title__top">Надежность, проверенная<br> десятилетиями!</span><br>
+                            <span class="about-page-title__top"><?=Yii::$app->langs->t("Надежность, проверенная<br> десятилетиями!")?></span><br>
                             <div class="about-page-title__main">
                                 <ul>
-                                    <li>Один из лидеров  среди риэлторских компаний Москвы</li>
-                                    <li>Полный комплекс услуг</li>
-                                    <li>Удобное расположение офисов</li>
+                                    <li><?=Yii::$app->langs->t("Один из лидеров  среди риэлторских компаний Москвы")?></li>
+                                    <li><?=Yii::$app->langs->t("Полный комплекс услуг")?></li>
+                                    <li><?=Yii::$app->langs->t("Удобное расположение офисов")?></li>
                                 </ul>
                             </div>
                         </div>

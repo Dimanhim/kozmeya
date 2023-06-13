@@ -10,7 +10,7 @@ use yii\helpers\Html;
         <header class="work__area-head">
             <?= $this->render( '/parts/bcrumbs', [] ); ?>
 
-            <h1 class="h1-head"><?=Html::encode(\Yii::$app->meta->getPageTitle("Сравнение"));?></h1>
+            <h1 class="h1-head"><?=Html::encode(\Yii::$app->meta->getPageTitle("Compare"));?></h1>
         </header>
         <div class="detail-shares-area">
             <? if(count(\Yii::$app->params["compares"]) > 0):?>
@@ -39,7 +39,7 @@ use yii\helpers\Html;
                     <? endif;?>
                 <? endforeach;?>
             <? else:?>
-                В сравнении ничего нет
+                <?=Yii::$app->langs->t("В сравнении ничего нет")?>
             <? endif;?>
 
             <?=\Yii::$app->meta->getSeoText();?>

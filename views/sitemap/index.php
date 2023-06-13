@@ -15,7 +15,7 @@ use yii\helpers\Html;
 <main class="main">
     <div class="container">
 
-    <h1><?=Html::encode(\Yii::$app->meta->getPageTitle("Карта сайта"));?></h1>
+    <h1><?=Html::encode(\Yii::$app->meta->getPageTitle(\Yii::$app->langs->t("Карта сайта")));?></h1>
 
     <div class="text">
         <?
@@ -36,7 +36,7 @@ use yii\helpers\Html;
             <div style="clear:both;"></div>
         </div>
     </div>
-	
+
 
 	<?=\Yii::$app->meta->getSeoText();?>
     </div>

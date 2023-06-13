@@ -8,7 +8,7 @@ use yii\helpers\Html;
 <div class="header_top" style="background-image: url(/img/header.png); ">
     <div class="container">
         <div class="page-title d-flex align-items-center">
-            <div>Ошибка</div>
+            <div><?=\Yii::$app->langs->t("Ошибка")?></div>
         </div>
     </div>
 </div>

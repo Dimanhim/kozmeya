@@ -1,0 +1,216 @@
+/*
+#AEAEAE - текст белый
+#3c3c3c - фон серый
+*/
+body#invert,
+#invert .header,
+#invert .top_line,
+#invert .top-nav,
+#invert .main_menu,
+#invert .submenu,
+#invert .profile_bar,
+#invert .favorites_bar,
+#invert .search_line,
+#invert .fly-backet
+{
+    background: #000;
+    color: #AEAEAE;
+}
+body#invert a
+{
+    color: #AEAEAE;
+}
+#invert .search_icon {
+    background-image: url(../img/search_icon-inv.png);
+}
+#invert .heart_icon {
+    background-image: url(../img/heart2-inv.png);
+}
+#invert .heart_icon.active {
+    background-image: url("../img/heart-inv.png");
+}
+#invert .cab_icon {
+    background-image: url(../img/cab_icon-inv.png);
+}
+#invert .cart_icon {
+    background-image: url(../img/cart_icon-inv.png);
+}
+#invert .top_text-block {
+    background: #000;
+    color: #AEAEAE;
+}
+#invert .catalog_filter {
+    background: #000;
+    color: #AEAEAE;
+}
+#invert .filter-box {
+    background: #000;
+    color: #AEAEAE;
+}
+#invert .search_line input {
+    background: #000;
+    color: #AEAEAE;
+    font-size: 23px;
+    padding-left: 0;
+}
+#invert .fa-whatsapp::before {
+    color: #AEAEAE;
+}
+#invert .instagram_icon {
+    background-image: url(../img/instagram-inv.png);
+}
+#invert .facebook_icon {
+    background-image: url(../img/facebook-inv.png);
+}
+#invert .footer_menu-title {
+    color: #AEAEAE;
+}
+#invert .footer_form {
+    padding: 14px 0;
+    border-bottom: 1px solid #3c3c3c;
+}
+#invert .footer_text {
+    border-bottom: 1px solid #3c3c3c;
+}
+#invert .sprite-slider-4 {
+    background-image: url(../img/black_arrow-right-inv.png);
+}
+#invert .sprite-slider-10 {
+    background-image: url(../img/black_arrow-left-inv.png);
+}
+#invert select.form-control:not([size]):not([multiple]) {
+    background: url('../img/black_arrow-bottom-inv.png');
+    background: #000;
+}
+#invert .control input:checked ~ .control_indicator {
+    background-image: url(../img/radio-inv.png);
+    background-color: #000;
+}
+#invert .jq-selectbox__select-text {
+    background: #000;
+    border: 1px solid #4c4d4f;
+    color: #4c4d4f;
+}
+#invert .jq-selectbox__dropdown ul {
+    background: #000;
+}
+#invert .jq-selectbox__dropdown {
+    background: #4c4d4f;
+}
+#invert .jq-selectbox__select-text::after {
+
+}
+#invert .main_banner-btn
+{
+    background: #000;
+    border: 1px solid #AEAEAE;
+    color: #AEAEAE !important;
+}
+#invert .main_banner-btn:hover
+{
+    background: #4C4D51;
+    border: 1px solid #4C4D51;
+}
+#invert .modal-content {
+    background-color: #000;
+}
+#invert input,
+#invert textarea,
+#invert select,
+#invert .jq-selectbox__select,
+#invert .jq-selectbox__select-text
+{
+    background: #000;
+    border-color: #AEAEAE;
+    color: #AEAEAE;
+}
+#invert input::placeholder,
+#invert textarea::placeholder {
+    color: #AEAEAE;
+}
+#invert form button:hover
+{
+    background: #AEAEAE;
+    color: #3c3c3c;
+}
+#invert .form-separator {
+    background: #3c3c3c;
+}
+#invert .cookies-banner {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #3c3c3c;
+}
+#invert .cookies-banner .cookies-text {
+    color: #AEAEAE;
+}
+#invert .cgood-btn {
+    background: #4C4D4F;
+}
+#invert .cgood-btn:hover {
+    background: #AEAEAE;
+    color: #3c3c3c;
+}
+#invert .pf-box {
+    background: #000;
+    border: 1px solid #fff;
+}
+#invert .burger::after,
+#invert .burger::before,
+#invert .burger span
+{
+    background: #fff;
+}
+#invert .burger {
+    height: 14px;
+}
+#invert .mobi-nav {
+    background: #000;
+}
+#invert .main_menu li::after {
+    background-color: #AEAEAE;
+}
+#invert .cart_order-menu li {
+    color: #AEAEAE;
+}
+#invert .cart_order-menu li span {
+    border: 1px solid #3c3c3c;
+    background: #3c3c3c;
+    color: #AEAEAE
+}
+#invert .cart_order-menu li.active span {
+    border: 1px solid #AEAEAE;
+    background: #AEAEAE;
+    color: #4C4D4F
+}
+#invert .cart-table,
+#invert .cart-table a {
+    color: #AEAEAE;
+}
+#invert .cart_order-menu li:last-child span::after {
+    width: 0px;
+}
+#invert .item_image .product-img .w-100 {
+    height: 102%;
+    margin-top: -2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#feedback-form button {
+    padding: 15px 30px
+}
+.slider_next,
+.slider_prev
+{
+    z-index: 400;
+}
+

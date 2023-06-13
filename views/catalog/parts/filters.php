@@ -8,32 +8,35 @@ Yii::$app->catalog->forceSubs($category->id, $subs);
 
     <div class="container">
         <form method="get" class="filters pjaxFilters" data-grid="#catalogGrid" action="/<?=$uri;?>" data-pjax="0">
-        
+
             <ul class="filter-nav d-flex">
 
                 <? if(isset(Yii::$app->params["allCategoriesPid"][$category->parent])): $chunks = array_chunk(Yii::$app->params["allCategoriesPid"][$category->parent], ceil(count(Yii::$app->params["allCategoriesPid"][$category->parent])/2) );?>
 
+                <?php if(false) : ?>
                     <li>
+
                         <a href="javascript:void(0);">
-                            Модель<span class="icon-caret"></span>
+                            <?//=Yii::$app->langs->t("Модель");?><span class="icon-caret"></span>
                         </a>
+
                         <? $count = ceil(count(Yii::$app->params["allCategoriesPid"][$category->parent])/2)?>
 
                         <div class="filter-box">
                             <div class="filter-list">
-                                <div class="row">                                                
+                                <div class="row">
                 					<? for ($i=0; $i<$count; $i++): ?>
-                						<? if ( isset($chunks[$i]) ): ?>            			
+                						<? if ( isset($chunks[$i]) ): ?>
                 						<div class="col-md-6">
                 	                        <? foreach($chunks[$i] as $index => $vv): ?>
-                	                            
+
                                                 <label class="control control-radio" for="filter_value_m<?=$vv->id;?>">
                                                     <?=$vv->name;?>
 
                                                     <input class="cats" type="radio" id="filter_value_m<?=$vv->id;?>" name="filters[categories]" value="<?=$vv->id;?>" <?=(isset($query["filters"]['categories']) && $query["filters"]['categories'] == $vv->id ? "checked" : "")?>>
                                                     <div class="control_indicator"></div>
                                                 </label>
-                	                           
+
                 	                        <? endforeach;?>
                 	                     </div>
                                         <? endif; ?>
@@ -41,24 +44,25 @@ Yii::$app->catalog->forceSubs($category->id, $subs);
                                 </div>
                             </div>
 
-                            <div class="filter-box-footer">                                
+                            <div class="filter-box-footer">
                                 <div class="row">
                                     <div class="col-lg-9">
-                                        <div class="filter-btn">                                        
+                                        <div class="filter-btn">
                                             <button type="submit" class="btn-dark"><?=Yii::$app->langs->t("Применить");?></button>
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="text-center">
-                                            <div class="filter-clear-link">                                            
+                                            <div class="filter-clear-link">
                                                 <a href="/<?=$uri;?>"><?=Yii::$app->langs->t("Очистить");?></a>
                                             </div>
                                         </div>
                                     </div>
-                                </div>   
+                                </div>
                             </div>
                         </div><!--.filter-box-->
                     </li>
+                <?php endif; ?>
 
                 <? endif;?>
 
@@ -66,7 +70,7 @@ Yii::$app->catalog->forceSubs($category->id, $subs);
                 <? if($colors && count($gm) > 1): $chunks = array_chunk($colors, ceil(count($colors)/3));?>
                     <li>
                         <a href="javascript:void(0);">
-                            Цвет<span class="icon-caret"></span>
+                            <?=Yii::$app->langs->t("Цвет");?><span class="icon-caret"></span>
                         </a>
                         <div class="filter-box">
                             <div class="filter-list">
@@ -83,24 +87,24 @@ Yii::$app->catalog->forceSubs($category->id, $subs);
                                         <? endforeach;?>
                                     </div>
                                     <? endforeach;?>
-                                </div>                                
-                            </div>                           
+                                </div>
+                            </div>
 
-                            <div class="filter-box-footer">                                
+                            <div class="filter-box-footer">
                                 <div class="row">
                                     <div class="col-lg-9">
-                                        <div class="filter-btn">                                        
+                                        <div class="filter-btn">
                                             <button type="submit" class="btn-dark"><?=Yii::$app->langs->t("Применить");?></button>
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="text-center">
-                                            <div class="filter-clear-link">                                            
+                                            <div class="filter-clear-link">
                                                 <a href="/<?=$uri;?>"><?=Yii::$app->langs->t("Очистить");?></a>
                                             </div>
                                         </div>
                                     </div>
-                                </div>   
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -114,7 +118,7 @@ Yii::$app->catalog->forceSubs($category->id, $subs);
                         </a>
                         <div class="filter-box">
                             <div class="filter-list">
-                                <div class="row">                                    
+                                <div class="row">
                                     <? foreach($chunks as $index => $chunk):?>
                                         <div class="col-md-6">
                                             <? foreach ($chunk as $kk=>$vv):?>
@@ -128,20 +132,20 @@ Yii::$app->catalog->forceSubs($category->id, $subs);
                                         </div>
                                     <? endforeach;?>
                                 </div>
-                                
+
                             </div>
                             <div class="filter-box-footer">
                                 <button type="submit" class="btn-dark">Применить</button>
                             </div>
                         </div>
-                        
+
                     </li>
                 <? endif;*/?>
 
                 <? if($brands && count($gm) > 1): $chunks = array_chunk($brands, ceil(count($brands)/3));?>
                     <li>
                         <a href="javascript:void(0);">
-                            Коллекция<span class="icon-caret"></span>
+                            <?=Yii::$app->langs->t("Коллекция");?><span class="icon-caret"></span>
                         </a>
                         <div class="filter-box">
                             <div class="filter-list">
@@ -157,25 +161,25 @@ Yii::$app->catalog->forceSubs($category->id, $subs);
                                                 </label>
                                             <? endforeach;?>
                                         </div>
-                                    <? endforeach;?>  
-                                </div>                              
-                            </div>                             
+                                    <? endforeach;?>
+                                </div>
+                            </div>
 
-                            <div class="filter-box-footer">                                
+                            <div class="filter-box-footer">
                                 <div class="row">
                                     <div class="col-lg-9">
-                                        <div class="filter-btn">                                        
+                                        <div class="filter-btn">
                                             <button type="submit" class="btn-dark"><?=Yii::$app->langs->t("Применить");?></button>
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="text-center">
-                                            <div class="filter-clear-link">                                            
+                                            <div class="filter-clear-link">
                                                 <a href="/<?=$uri;?>"><?=Yii::$app->langs->t("Очистить");?></a>
                                             </div>
                                         </div>
                                     </div>
-                                </div>   
+                                </div>
                             </div>
 
                         </div>
@@ -296,25 +300,25 @@ Yii::$app->catalog->forceSubs($category->id, $subs);
                                     <? endif;?>
                                 <? endif;?>
                             <? endif;?>
-                            
-                        </div>
-                        
 
-                        <div class="filter-box-footer">                                
+                        </div>
+
+
+                        <div class="filter-box-footer">
                             <div class="row">
                                 <div class="col-lg-9">
-                                    <div class="filter-btn">                                        
+                                    <div class="filter-btn">
                                         <button type="submit" class="btn-dark"><?=Yii::$app->langs->t("Применить");?></button>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="text-center">
-                                        <div class="filter-clear-link">                                            
+                                        <div class="filter-clear-link">
                                             <a href="/<?=$uri;?>"><?=Yii::$app->langs->t("Очистить");?></a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>   
+                            </div>
                         </div>
 
 
@@ -322,13 +326,15 @@ Yii::$app->catalog->forceSubs($category->id, $subs);
                 </li>
                 <? endforeach;?>
 
+                <!--
                 <li class="ml-auto" id="sort">
-                    <?= $this->render('/catalog/parts/sorts', [
+                    <?/*= $this->render('/catalog/parts/sorts', [
                         'query' => $query,
                         'uri' => $uri,
                         'getParams' => $getParams,
-                    ] ); ?>
+                    ] );*/ ?>
                 </li>
+                -->
             </ul>
         </form>
     </div>

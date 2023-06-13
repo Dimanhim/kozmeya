@@ -15,7 +15,7 @@ use yii\helpers\Html;
     <? else:?>
 
         <? if(count(\Yii::$app->params['cart']['items']) == 0):?>
-            
+
             <div class="lk_wrap">
                 <div class="lk_block-title">
                     <?=Yii::$app->langs->t("Корзина пуста");?>
@@ -25,11 +25,11 @@ use yii\helpers\Html;
         <? else:?>
 
             <div class="cart_order-menu">
-                
+
                 <ul>
                     <li class="<? if($step == 1):?>active<? endif;?>"><span>1</span><?=Yii::$app->langs->t("Корзина");?></li>
                     <? if(Yii::$app->siteuser->isGuest):?>
-                    <li class="<? if($step == 3):?>active<? endif;?>"><span>2</span><?=Yii::$app->langs->t("Вход / Регистрация");?></li>
+                    <li class="<? if($step == 3):?>active<? endif;?>"><span>2</span><?=Yii::$app->langs->t("Вход").' / '.Yii::$app->langs->t("Регистрация");?></li>
                     <li class="<? if($step == 3):?>active<? endif;?>"><span>3</span><?=Yii::$app->langs->t("Доставка и оплата");?></li>
                     <? else:?>
                         <li class="<? if($step == 2):?>active<? endif;?>"><span>2</span><?=Yii::$app->langs->t("Доставка и оплата");?></li>
@@ -38,7 +38,7 @@ use yii\helpers\Html;
             </div>
 
             <? if($step == 1):?>
-                
+
                 <h1 class="cart-title"><?=Yii::$app->langs->t("Корзина");?></h1>
 
                 <div class="tracking_section">
@@ -60,9 +60,9 @@ use yii\helpers\Html;
                 </div>
 
                 <div class="summary_price cart_price">
-                    
-                    <div class="row flex-md-row-reverse align-items-end">                        
-                        <div class="col-lg-4 col-md-6">                            
+
+                    <div class="row flex-md-row-reverse align-items-end">
+                        <div class="col-lg-4 col-md-6">
                             <div class="cartPrices">
                                 <?= $this->render( '/catalog/parts/cart_prices', ['main' => false] ); ?>
                             </div>
@@ -74,7 +74,7 @@ use yii\helpers\Html;
                                 <div class="footer_form">
                                     <form class="setPromocode" method="post" action="">
                                         <div class="input">
-                                            <input required type="text" id="promo" placeholder="Введите промокод" name="code" value="<?=\Yii::$app->session["promocode"];?>">
+                                            <input required type="text" id="promo" placeholder="<?=Yii::$app->langs->t("Введите промокод")?>" name="code" value="<?=\Yii::$app->session["promocode"];?>">
                                         </div>
                                         <div class="button">
                                             <button type="submit">&gt;</button>
@@ -92,15 +92,15 @@ use yii\helpers\Html;
                     <a href="/cart?step=<? if(Yii::$app->siteuser->isGuest):?>2<? else:?>3<? endif;?>"><?=Yii::$app->langs->t("Продолжить оформление");?></a>
                 </div>
             <? elseif($step == 2):?>
-                <h1><?=Yii::$app->langs->t("ВХОД / РЕГИСТРАЦИЯ");?></h1>
+                <h1><?=Yii::$app->langs->t("ВХОД").' / '.Yii::$app->langs->t("РЕГИСТРАЦИЯ");?></h1>
 
                 <div class="reg cart_content">
-                    
-                    
+
+
                     <div class="row">
-                        <div class="col-lg-5">                            
+                        <div class="col-lg-5">
                             <div class="h4">
-                                <?=Yii::$app->langs->t("Регистрация");?>:                                
+                                <?=Yii::$app->langs->t("Регистрация");?>:
                             </div>
 
                             <div class="privancy-policy">
@@ -137,10 +137,10 @@ use yii\helpers\Html;
                                     <input class="form-control" required type="text" id="email" name="email" placeholder="">
                                 </div>
                                 <div class="form-group">
-                                    <label><?=Yii::$app->langs->t("Пароль");?></label>                                    
+                                    <label><?=Yii::$app->langs->t("Пароль");?></label>
                                     <div class="position-relative">
-                                        <input class="form-control" required type="password" id="passwd_input" name="password" placeholder=""> 
-                                        <span class="show-pass" id="show_passwd"><?=Yii::$app->langs->t("Показать");?></span>                   
+                                        <input class="form-control" required type="password" id="passwd_input" name="password" placeholder="">
+                                        <span class="show-pass" id="show_passwd"><?=Yii::$app->langs->t("Показать");?></span>
                                     </div>
                                 </div>
 
@@ -164,7 +164,7 @@ use yii\helpers\Html;
 
                             <form id="loginForm">
                                 <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
-                                
+
                                 <div class="form-group">
                                     <input class="form-control" type="login" name="SiteLoginForm[username]" placeholder="<?=Yii::$app->langs->t("Адрес электронной почты");?>">
                                 </div>
@@ -173,7 +173,7 @@ use yii\helpers\Html;
                                 </div>
 
                                 <a href="#" class="login_pre-text"><?=Yii::$app->langs->t("Забыли пароль?");?></a>
-                                <button type="submit" class="btn btn-dark btn-wm login_btn"><?=Yii::$app->langs->t("Войти");?></button>                                
+                                <button type="submit" class="btn btn-dark btn-wm login_btn"><?=Yii::$app->langs->t("Войти");?></button>
                             </form>
                         </div>
                     </div>
@@ -182,7 +182,7 @@ use yii\helpers\Html;
                 <h1><?=Yii::$app->langs->t("ДОСТАВКА И ОПЛАТА");?></h1>
 
                 <form id="orderForm" method="post">
-                    
+
                     <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
 
                     <div class="container">
@@ -191,7 +191,7 @@ use yii\helpers\Html;
 
                                 <div class="col-lg-5">
                                     <div class="h4">
-                                        <?=Yii::$app->langs->t("ВЫБЕРИТЕ СПОСОБ ДОСТАВКИ И ОПЛАТЫ");?>                                    
+                                        <?=Yii::$app->langs->t("ВЫБЕРИТЕ СПОСОБ ДОСТАВКИ И ОПЛАТЫ");?>
                                     </div>
 
                                     <div class="form-group">
@@ -206,11 +206,11 @@ use yii\helpers\Html;
 	                                    <select name="Orders[pickup_point_id]" class="pickup">
 
 		                                    <? foreach ($pickup as $v ): ?>
-		                                    	<option value="<?=$v->id?>">Пункт самовывоза: <?=$v->name?></option>
+		                                    	<option value="<?=$v->id?>"><?=Yii::$app->langs->t("Пункт самовывоза")?>: <?=$v->name?></option>
 		                                    <? endforeach; ?>
 	                                    </select>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <select name="Orders[payment_id]">
                                             <? foreach($payments as $k=>$v):?>
@@ -223,14 +223,14 @@ use yii\helpers\Html;
                                     <div class="form-separator"></div>
                                 </div>
                                 <div class="col-lg-5">
-                                    
+
                                     <div class="mb-5">
                                         <div class="h4">
-                                            <?=Yii::$app->langs->t("ПОЛУЧАТЕЛЬ");?><small><a href="#"><?=Yii::$app->langs->t("Заполнить из моих данных");?></a></small>
+                                            <?=Yii::$app->langs->t("ПОЛУЧАТЕЛЬ");?> <small><a href="#"><?=Yii::$app->langs->t("Заполнить из моих данных");?></a></small>
                                         </div>
 
                                         <div class="form-group">
-                                            <input class="form-control" required="" type="text" name="Orders[name]" placeholder="Имя Фамилия" value="<?=(!Yii::$app->siteuser->isGuest ? Yii::$app->siteuser->identity->name : "");?>">
+                                            <input class="form-control" required="" type="text" name="Orders[name]" placeholder="<?=Yii::$app->langs->t("Имя Фамилия")?>" value="<?=(!Yii::$app->siteuser->isGuest ? Yii::$app->siteuser->identity->name : "");?>">
                                         </div>
 
                                         <div class="form-group">
@@ -238,12 +238,12 @@ use yii\helpers\Html;
                                         </div>
 
                                         <div class="form-group">
-                                            <input class="form-control" required="" type="tel" name="Orders[phone]" placeholder="Номер телефона" value="+7 (999) 999-9999">
+                                            <input class="form-control" required="" type="tel" name="Orders[phone]" placeholder="<?=Yii::$app->langs->t("Номер телефона")?>" value="+7 (999) 999-9999">
                                         </div>
                                     </div>
-									<div class="dadr" style="display: none;">		
+									<div class="dadr" style="display: none;">
                                     <div class="h4">
-                                        <?=Yii::$app->langs->t("Адрес доставки");?>                                        
+                                        <?=Yii::$app->langs->t("Адрес доставки");?>
                                     </div>
 
                                     <div class="form-group">
@@ -263,6 +263,7 @@ use yii\helpers\Html;
                                         <input class="form-control" type="text" name="Orders[index]" placeholder="Индекс" value="<?=(!Yii::$app->siteuser->isGuest ? Yii::$app->siteuser->identity->index : "");?>">
                                     </div>
 
+                                        <!--
                                     <div class="form-group">
                                         <label><?=Yii::$app->langs->t("Город");?></label>
                                         <select class="deliveryCities" name="Orders[city]">
@@ -276,16 +277,21 @@ use yii\helpers\Html;
                                         <label><?=Yii::$app->langs->t("Город (если нет в списке)");?></label>
                                         <input class="form-control deliveryCity"  type="text" name="city_another" placeholder="Город" value="">
                                     </div>
+                                        -->
+                                        <div class="form-group">
+                                            <label><?=Yii::$app->langs->t("Город");?></label>
+                                            <input class="form-control deliveryCity"  type="text" name="city_another" placeholder="<?=Yii::$app->langs->t("Город");?>" value="">
+                                        </div>
                                     <div class="form-group">
                                         <label><?=Yii::$app->langs->t("Адрес");?></label>
-                                        <input class="form-control" type="text" name="Orders[address]" placeholder="Адрес" value="<?=(!Yii::$app->siteuser->isGuest ? Yii::$app->siteuser->identity->address : "");?>">
+                                        <input class="form-control" type="text" name="Orders[address]" placeholder="<?=Yii::$app->langs->t("Адрес")?>" value="<?=(!Yii::$app->siteuser->isGuest ? Yii::$app->siteuser->identity->address : "");?>">
                                     </div>
 									</div>
                                 </div>
                             </div>
 
                             <div class="tracking_section">
-                                
+
                                 <div class="h4">
                                     <?=Yii::$app->langs->t("данные заказа");?>
                                 </div>
@@ -319,7 +325,7 @@ use yii\helpers\Html;
                                     </tbody>
                                 </table>
                             </div>
-                            
+
                             <div class="summary_price cart_price">
                                 <div class="row flex-md-row-reverse align-items-end">
                                     <div class="col-lg-4 col-md-6">
@@ -333,10 +339,10 @@ use yii\helpers\Html;
                                         </div>
                                     </div>
                                 </div>
-                            </div>  
-                        </div><!--.reg-->                     
+                            </div>
+                        </div><!--.reg-->
                     </div>
-                    
+
                     <div class="client-agreement">
                         <div class="cg-content">
                             <input type="checkbox" name="apply"><?=Yii::$app->langs->t("Поставьте отметку, чтобы указать, что вы согласны с нашими");?>

@@ -4,6 +4,6 @@
     </div>
     <div class="info__shares-contain"><b><?=$v->name;?></b>
         <p><?=$v->small;?></p>
-        <a href="<?=$v->url;?>" class="red__btn red__btn-arrow">Подробнее  </a>
+        <a href="<?=$v->url;?>" class="red__btn red__btn-arrow"><?=Yii::$app->langs->t("Подробнее")?>  </a>
     </div>
 </div>

@@ -38,6 +38,7 @@
         }
         $settingsMenu[] = ['name' => 'Подписка', 'route' => '/admin/subscribes', 'icon' => 'fa fa-fw fa-envelope'];
         //$settingsMenu[] = ['name' => 'Рассылка', 'route' => '/admin/emailer', 'icon' => 'fa fa-fw fa-envelope'];
+
         ?>
 
         <? $menu = [

@@ -7,7 +7,7 @@
     <div class="rev-list-info">
         <ul class="list rev-list-info-list clearfix">
             <li class="clearfix">
-                <div class="assessments-list-title">Качество товаров:</div>
+                <div class="assessments-list-title"><?=\Yii::$app->langs->t("Качество товаров")?>:</div>
                 <div class="assessments-square">
                     <div class="square__area">
                         <div data-score="<?=$v->rating_1;?>" class="square-raty"></div>
@@ -15,7 +15,7 @@
                 </div>
             </li>
             <li class="clearfix">
-                <div class="assessments-list-title">Качество общения:</div>
+                <div class="assessments-list-title"><?=\Yii::$app->langs->t("Качество общения")?>:</div>
                 <div class="assessments-square">
                     <div class="square__area">
                         <div data-score="<?=$v->rating_2;?>" class="square-raty"></div>
@@ -23,7 +23,7 @@
                 </div>
             </li>
             <li class="clearfix">
-                <div class="assessments-list-title">Качество доставки:</div>
+                <div class="assessments-list-title"><?=\Yii::$app->langs->t("Качество доставки")?>:</div>
                 <div class="assessments-square">
                     <div class="square__area">
                         <div data-score="<?=$v->rating_3;?>" class="square-raty"></div>

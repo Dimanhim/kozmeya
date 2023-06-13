@@ -108,8 +108,8 @@ class ProfileController extends \app\components\Controller
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 
             $success = false;
-            $msg = "Добро пожаловать на сайт!";
-            $error = "Пользователь с таким логином и паролем не найден";
+            $msg = Yii::$app->langs->t("Добро пожаловать на сайт!");
+            $error = Yii::$app->langs->t("Пользователь с таким логином и паролем не найден");
 
             $form = new SiteLoginForm();
             if ($form->load(\Yii::$app->request->post()) && $form->login()) {
@@ -129,7 +129,7 @@ class ProfileController extends \app\components\Controller
         if (Yii::$app->request->isAjax) {
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 
-            $msg = "Добро пожаловать на сайт!";
+            $msg = Yii::$app->langs->t("Добро пожаловать на сайт!");
 
             $data = \Yii::$app->request->post();
             $result = Users::register($data);

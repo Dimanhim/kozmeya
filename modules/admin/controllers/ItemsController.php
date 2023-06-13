@@ -410,7 +410,7 @@ class ItemsController extends \app\modules\admin\components\AdminController
                                                             }
 
                                                             $var_value_id = 0;
-															
+
                                                             if($varvalue = VarsShowtypesValues::find()->where(["LIKE", "text", $varValueName])->andWhere(["showtype_id" => $showtype_id])->one()){
                                                                 $var_value_id = $varvalue->id;
                                                             }

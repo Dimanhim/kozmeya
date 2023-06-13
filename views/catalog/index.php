@@ -26,7 +26,7 @@ use app\components\Paginator;
                     <?=Html::encode(\Yii::$app->meta->getPageTitle($page->name));?>
                 <? endif;?>
             </h1>
-            
+
             <? if($dataProvider->getPagination()->page == 0): ?>
                 <div class="row">
                     <div class="col-lg-6">
@@ -46,7 +46,7 @@ use app\components\Paginator;
                             <? endif; ?>
                         </div>
                     </div>
-                </div>                
+                </div>
             <? endif; ?>
 
         </div>
@@ -75,9 +75,11 @@ use app\components\Paginator;
         <div class="models_list">
             <div class="row justify-content-center">
                 <? foreach($dataProvider->getModels() as $k=>$v):?>
-                    <div class="col-6 col-lg-3">
-                        <?= $this->render( '/catalog/parts/item', ['v' => $v, 'catalog' => true] ); ?>
-                    </div>
+                    <?php if($v->vis) : ?>
+                        <div class="col-6 col-lg-3">
+                            <?= $this->render( '/catalog/parts/item', ['v' => $v, 'catalog' => true] ); ?>
+                        </div>
+                    <?php endif; ?>
                 <? endforeach;?>
             </div>
         </div>

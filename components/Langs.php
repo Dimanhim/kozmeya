@@ -13,14 +13,15 @@ class Langs  extends Component
     }
 
     public function setup(){
-        \Yii::$app->params['lang'] = "ru";
+        //\Yii::$app->params['lang'] = "ru";
+        \Yii::$app->params['lang'] = "en";
         \Yii::$app->params['t'] = [];
         \Yii::$app->params['modelt'] = [];
         \Yii::$app->params['langs'] = [];
 
-        if(\Yii::$app->session->has("lang") && \Yii::$app->session["lang"] != "") {
+        /*if(\Yii::$app->session->has("lang") && \Yii::$app->session["lang"] != "") {
             \Yii::$app->params['lang'] = \Yii::$app->session["lang"];
-        }
+        }*/
 
         $langs = \app\models\Langs::find()->where("vis = '1'")->all();
         if($langs) foreach ($langs as $k=>$v) {

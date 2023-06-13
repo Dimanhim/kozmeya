@@ -101,7 +101,7 @@ class CatalogController extends \app\components\Controller
                 $this->filtersData["categories"] = [];
             }
 
-            
+
             \Yii::$app->catalog->add2navihierarchy($category);
 
             return $this->catalog($category);
@@ -314,7 +314,7 @@ class CatalogController extends \app\components\Controller
 
     public function actionCart()
     {
-        $amocrm = Yii::$app->amocrm->getClient();
+        //$amocrm = Yii::$app->amocrm->getClient();
 
         $model = new Orders();
         $success = false;
@@ -351,9 +351,9 @@ class CatalogController extends \app\components\Controller
             $deliveriesById[$v->id] = $v;
         }
 
-        if(Yii::$app->request->isPost && isset($postData["Orders"])) 
+        if(Yii::$app->request->isPost && isset($postData["Orders"]))
         {
-	        
+
 
             $model->status_id = 1;
             $model->deleted = 0;
@@ -395,13 +395,13 @@ class CatalogController extends \app\components\Controller
 
             if($model->save())
             {
-	            
-                if(count(\Yii::$app->params['cart']['items']) > 0) 
+
+                if(count(\Yii::$app->params['cart']['items']) > 0)
                 {
-	                
+
                     foreach(\Yii::$app->params['cart']['items'] as $k=>$v)
                     {
-	                    
+
 
                         $orderitems = new OrdersItems();
                         $orderitems->order_id = $model->id;
@@ -424,7 +424,7 @@ class CatalogController extends \app\components\Controller
                         }
                     }
                 }
-	
+
                 $model->save();
 
                 $model = Orders::findOne($model->id);

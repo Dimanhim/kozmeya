@@ -9,7 +9,7 @@
                         <? if($v->link != ""):?>
                             <a href="<?=$v->link;?>"><?=$v->btn;?></a>
                         <? endif;?>
-                    </span>                
+                    </span>
                 </div>
             <? endforeach;?>
         </div>
@@ -18,7 +18,7 @@
 
 <div class="container">
     <? if(isset(Yii::$app->params['mainCats']) && count(Yii::$app->params['mainCats']) > 0) foreach(Yii::$app->params['mainCats'] as $k=>$v):?>
-    
+
     <? if ($k == 0): ?>
         <div class="main_model">
     		<div class="row">
@@ -27,7 +27,7 @@
     				<p class="main_banner-text">
     					<?=$v->small;?>
     				</p>
-    				<a class="main_banner-btn" href="<?=\Yii::$app->catalog->categoryUrl($v->id);?>">Смотреть все</a>
+                    <a class="main_banner-btn" href="<?=\Yii::$app->catalog->categoryUrl($v->id);?>">Style Request</a>
     			</div>
     			<div class="col-lg-9">
 <!--                     <a href="<?//=\Yii::$app->catalog->categoryUrl($v->id);?>"> -->
@@ -38,11 +38,23 @@
     		</div>
         </div>
     <? else: ?>
+        <?php
+            $btnName = Yii::$app->langs->t("Смотреть все");
+            if($v->name == 'SEMI-BESPOKE') {
+                $btnName = 'COLLECTION';
+            }
+            elseif($v->name == 'converted') {
+                $btnName = 'VISIT';
+            }
+            elseif($v->name == 'occasion') {
+                $btnName = 'VISIT';
+            }
+            ?>
 	    <div class="main_banner-<?=($k%2==0 ? 'right' : 'left');?>">
 	        <div class="row">
-		        
+
 		        <? if ( $k%2==0 ): ?>
-		        
+
     		        <div class="col-lg-6">
                         <div class="main_banner-img">
 <!--                             <a href="<?//=\Yii::$app->catalog->categoryUrl($v->id);?>"> -->
@@ -51,11 +63,11 @@
 <!--                             </a> -->
                         </div>
                     </div>
-    		        
+
     	            <div class="col-lg-3">
     	                <span class="main_banner-title"><a href="javascript:void(0);"><?=$v->name;?></a></span>
     	                <p class="main_banner-text"><?=$v->small;?></p>
-    	                <a class="main_banner-btn" href="<?=\Yii::$app->catalog->categoryUrl($v->id);?>"><?=Yii::$app->langs->t("Смотреть все");?></a>
+    	                <a class="main_banner-btn" href="<?=\Yii::$app->catalog->categoryUrl($v->id);?>"><?=$btnName;?></a>
     	            </div>
 
 		        <? else: ?>
@@ -70,7 +82,7 @@
     	            <div class="col-lg-3">
     	                <span class="main_banner-title"><a href="javascript:void(0);"><?=$v->name;?></a></span>
     	                <p class="main_banner-text"><?=$v->small;?></p>
-    	                <a class="main_banner-btn" href="<?=\Yii::$app->catalog->categoryUrl($v->id);?>"><?=Yii::$app->langs->t("Смотреть все");?></a>
+    	                <a class="main_banner-btn" href="<?=\Yii::$app->catalog->categoryUrl($v->id);?>"><?=$btnName;?></a>
     	            </div>
                 <? endif; ?>
 	        </div>
@@ -81,9 +93,11 @@
     <div class="models_list">
         <div class="product_slider">
             <? foreach ($v->items as $kk=>$vv):?>
-                <div class="product_slider-item">
-                    <?= $this->render( '/catalog/parts/item', ['v' => $vv, 'catalog' => true] ); ?>
-                </div>
+                <?php if($vv->vis) : ?>
+                    <div class="product_slider-item">
+                        <?= $this->render( '/catalog/parts/item', ['v' => $vv, 'catalog' => true] ); ?>
+                    </div>
+                <?php endif; ?>
             <? endforeach;?>
         </div>
     </div>

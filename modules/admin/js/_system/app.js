@@ -3,7 +3,7 @@ var body;
 $(function(){
 	//$.material.init();
 	body = $("body");
-	
+
 	if($("#refreshButton").length){
 		setInterval(function(){ $("#refreshButton").click(); }, 60000);
 	}

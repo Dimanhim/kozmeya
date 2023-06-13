@@ -16,26 +16,26 @@ if($item->old_price > 0 && $item->old_price != $item->price)
                 <div class="rev-name-r">
                     <div data-score="3" class="big-raity"></div>
                 </div>
-                <a href="#" class="estimate-el">Оценить</a>
+                <a href="#" class="estimate-el"><?=Yii::$app->langs->t("Оценить")?></a>
             </div>
             <div class="card-detail-pic">
                 <div class="card-detail-pic-d">
                     <img src="<?=\Yii::$app->functions->getUploadItem($item, "images", "fx", "245x550");?>" alt="<?=$item->name;?>">
-                    <a href="#" class="fast__view addToFav" data-method="add" data-id="<?=$item->id;?>">Добавить в избранное</a>
+                    <a href="#" class="fast__view addToFav" data-method="add" data-id="<?=$item->id;?>"><?=Yii::$app->langs->t("Добавить в избранное")?></a>
                     <? if($item->new):?><div class="news__el">new</div><? endif;?>
                 </div>
 
-                <a href="#interier-<?=$item->id;?>" class="w-interier popup-with-move-anim openModalInterior">посмотреть в интерьере</a>                
+                <a href="#interier-<?=$item->id;?>" class="w-interier popup-with-move-anim openModalInterior"><?=Yii::$app->langs->t("посмотреть в интерьере")?></a>
             </div>
         </div>
         <div class="col-md-8">
             <div class="row">
                 <div class="col-md-6">
                     <div class="characteristics-area mt-47 bd-gr">
-                        <h5>Характеристики</h5>
+                        <h5><?=Yii::$app->langs->t("Характеристики")?></h5>
                         <table class="characteristics-table">
                             <tr>
-                                <td>Производитель:</td>
+                                <td><?=Yii::$app->langs->t("Производитель")?>:</td>
                                 <td> <a href="/<?=\Yii::$app->params['allPages'][14]->alias;?>/<?=$item->brand->alias;?>"><?=$item->brand->name;?></a>
                                 </td>
                             </tr>
@@ -51,7 +51,7 @@ if($item->old_price > 0 && $item->old_price != $item->price)
                 </div>
                 <div class="col-md-6">
                     <div class="clearfix advantages-b">
-                        <div class="fleft"><i class="icon-time"></i><span class="inbl">Доставка на следующий день</span>
+                        <div class="fleft"><i class="icon-time"></i><span class="inbl"><?=Yii::$app->langs->t("Доставка на следующий день")?></span>
                         </div>
                         <div class="fright"><i class="icon-show"></i><span class="inbl"><?=$item->status->name;?></span>
                         </div>
@@ -68,14 +68,14 @@ if($item->old_price > 0 && $item->old_price != $item->price)
                             <?= $this->render('/catalog/parts/prices', ['item' => $item] ); ?>
 
                             <div class="order-option-b order-option-b-last ta-c">
-                                <button type="submit" class="send__dtn"><span class="red__btn red__btn-arrow">купить</span></button>
+                                <button type="submit" class="send__dtn"><span class="red__btn red__btn-arrow"><?=Yii::$app->langs->t("купить")?></span></button>
                             </div>
                         </form>
 
                         <a href="#" class="print__el"></a>
                     </div>
                 </div>
-                <div class="col-md-12"><a href="<?=\Yii::$app->catalog->itemUrl($item);?>" class="red__btn red__btn-arrow popup-more-btn">Подробнее</a>
+                <div class="col-md-12"><a href="<?=\Yii::$app->catalog->itemUrl($item);?>" class="red__btn red__btn-arrow popup-more-btn"><?=Yii::$app->langs->t("Подробнее")?></a>
                 </div>
             </div>
         </div>
@@ -208,6 +208,6 @@ if($item->old_price > 0 && $item->old_price != $item->price)
             </div>
         </div>
     </div>
-    
+
 
 </div><!--#fast_item-->

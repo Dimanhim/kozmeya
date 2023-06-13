@@ -8,7 +8,7 @@
                 <div class="col-md-4">
                     <div class="white__icon"><i class="icon-fr"></i>
                     </div>
-                    <div class="fr__serv-info"> <em>Бесплатная услуга</em>
+                    <div class="fr__serv-info"> <em><?=Yii::$app->langs->t("Бесплатная услуга")?></em>
                         <h2>Вызвать замерщика</h2>
                         <p>Наш специалист приедет в удобное для вас время, произведет замер и поможет подобрать подходящий вам вариант</p>
                     </div>

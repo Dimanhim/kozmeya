@@ -18,25 +18,25 @@ use yii\widgets\Pjax;
 
                 <?=$item->text;?>
 
-                <br><a href="#resume" class="red__btn popup-with-move-anim">Отправить резюме </a>
+                <br><a href="#resume" class="red__btn popup-with-move-anim"><?=\Yii::$app->langs->t("Отправить резюме")?> </a>
             </div>
             <div class="col-md-5">
                 <aside>
                     <div class="open__vacanies">
-                        <h3 class="h-3">Открытые вакансии</h3>
+                        <h3 class="h-3"><?=\Yii::$app->langs->t("Открытые вакансии")?></h3>
                         <ul class="list open__vacanies-list">
                             <? foreach($items as $k=>$v):?>
                                 <li><a href="<?=$v->url;?>"><?=$v->name;?></a></li>
                             <? endforeach;?>
                         </ul>
 
-                        <small>Не нашли подходящей вакансии? <br>Присылайте свои предложения о сотрудничестве на <a href="mailto:<?=Yii::$app->params["settings"][8];?>"><?=Yii::$app->params["settings"][8];?></a></small>
+                        <small><?=\Yii::$app->langs->t("Не нашли подходящей вакансии? <br>Присылайте свои предложения о сотрудничестве на")?> <a href="mailto:<?=Yii::$app->params["settings"][8];?>"><?=Yii::$app->params["settings"][8];?></a></small>
                     </div>
 
                     <div class="vacan__name-box">
-                        <div class="vacan-name-status">Контактное лицо:</div>
+                        <div class="vacan-name-status"><?=\Yii::$app->langs->t("Контактное лицо")?>:</div>
                         <div class="vacan-name">
-                            Серебряков Константин Николаевич
+                        <?=\Yii::$app->langs->t("Серебряков Константин Николаевич")?>
                         </div>
                         <ul class="list vacan-con-list">
                             <li>+7 (495) 764-62-09</li>

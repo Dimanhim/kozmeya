@@ -17,6 +17,7 @@ use yii\helpers\Json;
  */
 class Items extends \yii\db\ActiveRecord
 {
+    const UPLOAD_PATH = "ra/250x250/";
     /**
      * @inheritdoc
      */
@@ -188,7 +189,7 @@ class Items extends \yii\db\ActiveRecord
     public function fieldsData()
     {
         return [
-            'images' => ['type' => 'uploader_custom', 'data' => ["methodSize" => "ra/250x250/"]],
+            'images' => ['type' => 'uploader_custom', 'data' => ["methodSize" => Items::UPLOAD_PATH]],
         ];
     }
 
@@ -337,5 +338,12 @@ class Items extends \yii\db\ActiveRecord
     public function getReviews()
     {
         return $this->hasMany(ItemsReviews::className(), ['item_id' => 'id'])->andOnCondition(['vis' => 1])->orderBy("date DESC");
+    }
+    public function innerCategoryId()
+    {
+        if($this->categoryData && ($categoryData = json_decode($this->categoryData, true))) {
+            return $categoryData['id'];
+        }
+        return false;
     }
 }

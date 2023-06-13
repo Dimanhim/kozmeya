@@ -10,7 +10,7 @@ use yii\helpers\Html;
         <header class="work__area-head">
             <?= $this->render( '/parts/bcrumbs', [] ); ?>
 
-            <h1 class="h1-head"><?=Html::encode(\Yii::$app->meta->getPageTitle("Оплата заказа"));?></h1>
+            <h1 class="h1-head"><?=Html::encode(\Yii::$app->meta->getPageTitle(Yii::$app->langs->t("Оплата заказа")));?></h1>
         </header>
         <div class="detail-shares-area">
             <? if($success):?>
@@ -30,7 +30,7 @@ use yii\helpers\Html;
 
                     <input name="cps_email" value="<?=$order->email;?>" type="hidden"/>
 
-                    <input type="submit" value="Оплатить"/>
+                    <input type="submit" value="<?=Yii::$app->langs->t("Оплатить")?>"/>
                 </form>
             <? endif;?>
 

@@ -9,7 +9,7 @@ use yii\widgets\Pjax;
     <div class="container">
         <header class="work__area-head">
             <?= $this->render( '/parts/bcrumbs', [] ); ?>
-            <div class="tag-elem">Интернет-магазин</div>
+            <div class="tag-elem"><?=Yii::$app->langs->t("Интернет-магазин")?></div>
             <h1 class="h1-head"><?=Html::encode(\Yii::$app->meta->getPageTitle($page->name));?></h1>
         </header>
 

@@ -5,9 +5,9 @@ use yii\helpers\Html;
 <table>
     <thead>
         <tr>
-            <th>Изображение</th>
-            <th>Наименование</th>
-            <th>Стоимость</th>
+            <th><?=Yii::$app->langs->t("Изображение")?></th>
+            <th><?=Yii::$app->langs->t("Наименование")?></th>
+            <th><?=Yii::$app->langs->t("Стоимость")?></th>
         </tr>
     </thead>
     <tbody>

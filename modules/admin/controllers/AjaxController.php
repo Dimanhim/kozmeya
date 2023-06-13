@@ -70,7 +70,6 @@ class AjaxController extends \app\modules\admin\components\AdminController
         $html = "";
 
         $targetPath = \Yii::$app->basePath.'/'.Yii::$app->params['uploadDir'].'/'.$this->postData["folder"];
-
         if (!is_dir($targetPath))
         {
             @mkdir($targetPath, 0777);
@@ -93,6 +92,10 @@ class AjaxController extends \app\modules\admin\components\AdminController
 
                     $v = array("file" => $name, "caption" => "/".Yii::$app->params['uploadDir']."/".$this->postData["methodSize"].$this->postData["folder"]."/".$name, "text" => "");
 
+                    // он здесь сохраняет оригинал в sitefiles/Items... Это делает move_uploaded_file
+
+                    // здесь после рендеринга сохраняет в папку 255/255
+                    // тут по ходу нужно просто methodSize поменять на 1500 и все
                     $html .= $this->renderPartial( '/components/uploader_custom/parts/item', ['field' => $this->postData["field"], 'v' => $v] );
                     $success = true;
                 }

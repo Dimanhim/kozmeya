@@ -2,12 +2,16 @@ var body;
 
 $(function() {
 	body = $('body');
-	
+
+	$('body').on('click', '.cgood-btn', function(e) {
+	    e.preventDefault();
+	    $('.cookies-banner').fadeOut()
+	});
 	//ddd
-	
+
 	body.on('change', 'select.ddd', function(){
 		if ($(this).val() != 1) {
-			
+
 			$('.dadr').show();
 			$('.pickup_d').hide();
 		} else {
@@ -15,14 +19,14 @@ $(function() {
 			$('.dadr').hide();
 		}
 	});
-	
+
 	body.on('click', '.cgood', function(){
         $.post("/ajax/cgood", {v:1}, function (data) {
-			
+
         }, "json");
 	});
 	//cgood
-	
+
 	body.on('click', '.sub', function(){
 		$(this).closest( "form" ).submit();
 	});
@@ -294,7 +298,7 @@ $(function() {
                     return tmpl;
                 });
 
-                if(tmpl == "") tmpl = "Ничего не найдено";
+                if(tmpl == "") tmpl = "Nothing founded";
 
                 $this.closest('.iSearchBlock').append('<div class="iSearchResults" style="position: absolute; left: 0; top: 45px; width: 100%; display: block;"><div class="results"><div class="group"><div class="group-items"><div class="result">'+tmpl+'</div></div><div class="clearfix"></div></div></div></div>');
 
@@ -319,7 +323,7 @@ $(function() {
     }
 
     /* Favorites */
-    body.on("click", ".addToFav", function(){        
+    body.on("click", ".addToFav", function(){
 
         var $this = $(this);
         var icon = $("i", $this);
@@ -579,9 +583,9 @@ function validateForm(form){
 
     $('.required', form).removeClass('form-error');
     $('.required', form).removeClass('form-success');
-	
-	
-	
+
+
+
     $('.required', form).each(function(){
         var type = $(this).attr('type');
 
@@ -618,7 +622,7 @@ function validateForm(form){
 
     if(error) {
         $(".form-error", form).first().focus();
-        alertify.error('Заполните все обязательные поля');
+        alertify.error('Fill in all required fields');
     }
 
     return error;
@@ -627,7 +631,7 @@ function validateForm(form){
 function submitLoading(el, init){
 	el.prop('disabled', init);
 	var text = el.html();
-	
+
 	if(init){
 		el.addClass('loading');
 		el.text('Загрузка...');

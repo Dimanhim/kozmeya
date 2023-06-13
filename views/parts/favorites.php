@@ -8,9 +8,9 @@
                 <div class="col-6 col-xl-3 col-md-4">
                     <?= $this->render( '/catalog/parts/item', ['v' => $v, 'catalog' => true] ); ?>
                 </div>
-            <? endif; endforeach;?>           
+            <? endif; endforeach;?>
         </div>
-        <a href="/favorites" class="goto">Посмотрите все товары в избранном: <?=count(\Yii::$app->params['favorites']);?></a>
+        <a href="/favorites" class="goto"><?=Yii::$app->langs->t("Посмотрите все товары в избранном")?>: <?=count(\Yii::$app->params['favorites']);?></a>
     </div>
 <? else:?>
     <div class="favorites_block-text">

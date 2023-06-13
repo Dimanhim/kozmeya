@@ -26,22 +26,22 @@ $rating_3 = round(($ranks['rating_3'])/$ranks['count']);
 <div class="assessments-area row">
     <div class="col-md-4 col-sm-6">
         <div class="assessments-area-elem">
-            <div class="assessments-area-elem-title">Оценки пользователей</div>
+            <div class="assessments-area-elem-title"><?=\Yii::$app->langs->t("Оценки пользователей")?></div>
             <div class="rev-name-r">
                 <div data-score="<?=$avg;?>" class="rev-raity"></div>
             </div>
             <div class="average_rating">
 
-                Средня оценка: <span><?=$avg;?></span>
+                <?=\Yii::$app->langs->t("Средня оценка")?>: <span><?=$avg;?></span>
             </div>
         </div>
     </div>
     <div class="col-md-4 col-sm-6">
         <div class="assessments-area-elem">
-            <div class="assessments-area-elem-title">Подробные оценки</div>
+            <div class="assessments-area-elem-title"><?=\Yii::$app->langs->t("Подробные оценки")?></div>
             <ul class="list assessments-list">
                 <li class="clearfix">
-                    <div class="assessments-list-title">Качество товаров:</div>
+                    <div class="assessments-list-title"><?=\Yii::$app->langs->t("Качество товаров")?>:</div>
                     <div class="assessments-square">
                         <div class="square__area">
                             <div data-score="<?=$rating_1;?>" class="square-raty"></div>
@@ -49,7 +49,7 @@ $rating_3 = round(($ranks['rating_3'])/$ranks['count']);
                     </div>
                 </li>
                 <li class="clearfix">
-                    <div class="assessments-list-title">Качество общения:</div>
+                    <div class="assessments-list-title"><?=\Yii::$app->langs->t("Качество общения")?>:</div>
                     <div class="assessments-square">
                         <div class="square__area">
                             <div data-score="<?=$rating_2;?>" class="square-raty"></div>
@@ -57,7 +57,7 @@ $rating_3 = round(($ranks['rating_3'])/$ranks['count']);
                     </div>
                 </li>
                 <li class="clearfix">
-                    <div class="assessments-list-title">Качество доставки:</div>
+                    <div class="assessments-list-title"><?=\Yii::$app->langs->t("Качество доставки")?>:</div>
                     <div class="assessments-square">
                         <div class="square__area">
                             <div data-score="<?=$rating_3;?>" class="square-raty"></div>
@@ -69,28 +69,28 @@ $rating_3 = round(($ranks['rating_3'])/$ranks['count']);
     </div>
 </div>
 <div class="write__feedback free__serv rev-page">
-    <h4>Оставить отзыв</h4>
+    <h4><?=\Yii::$app->langs->t("Оставить отзыв")?></h4>
     <form class="addReview">
         <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
 
         <div class="clearfix">
             <div class="write__feedback-col-3">
-                <div class="form-box"><span class="float-text">Общая оценка*</span>
+                <div class="form-box"><span class="float-text"><?=\Yii::$app->langs->t("Общая оценка")?>*</span>
                     <div class="white__rait">
                         <div data-score="0" data-name="raty_1" class="feedback-raty"></div>
                     </div>
                 </div>
-                <div class="form-box"><span class="float-text">Качество товаров</span>
+                <div class="form-box"><span class="float-text"><?=\Yii::$app->langs->t("Качество товаров")?></span>
                     <div class="white__rait">
                         <div data-score="0" data-name="raty_2" class="feedback-raty"></div>
                     </div>
                 </div>
-                <div class="form-box"><span class="float-text">Качество общения</span>
+                <div class="form-box"><span class="float-text"><?=\Yii::$app->langs->t("Качество общения")?></span>
                     <div class="white__rait">
                         <div data-score="0" data-name="raty_3" class="feedback-raty"></div>
                     </div>
                 </div>
-                <div class="form-box"><span class="float-text">Качество доставки</span>
+                <div class="form-box"><span class="float-text"><?=\Yii::$app->langs->t("Качество доставки")?></span>
                     <div class="white__rait">
                         <div data-score="0" data-name="raty_4" class="feedback-raty"></div>
                     </div>
@@ -100,7 +100,7 @@ $rating_3 = round(($ranks['rating_3'])/$ranks['count']);
                 <div class="clearfix">
                     <div class="write__feedback-col-1">
                         <div class="form-box">
-                            <input type="text" placeholder="Имя" name="name" class="required">
+                            <input type="text" placeholder="<?=\Yii::$app->langs->t("Имя")?> name="name" class="required">
                         </div>
                     </div>
                     <div class="write__feedback-col-2">
@@ -110,10 +110,10 @@ $rating_3 = round(($ranks['rating_3'])/$ranks['count']);
                     </div>
                 </div>
                 <div class="form-box">
-                    <textarea placeholder="Сообщение" name="text" class="required"></textarea>
+                    <textarea placeholder="<?=\Yii::$app->langs->t("Сообщение")?> name="text" class="required"></textarea>
                 </div>
                 <div class="form-box">
-                    <button type="submit" class="send__dtn"><span class="red__btn red__btn-arrow">отправить         </span>
+                    <button type="submit" class="send__dtn"><span class="red__btn red__btn-arrow"><?=\Yii::$app->langs->t("отправить")?>         </span>
                     </button>
                 </div>
             </div>
@@ -124,7 +124,7 @@ $rating_3 = round(($ranks['rating_3'])/$ranks['count']);
 <br>
 <div class="card__tabs-content">
     <div class="tab-all-rev">
-        <h4>Все отзывы</h4>
+        <h4><?=\Yii::$app->langs->t("Все отзывы")?></h4>
 
         <?php Pjax::begin([
             'id' => 'reviewsGrid',

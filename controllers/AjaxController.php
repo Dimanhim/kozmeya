@@ -36,7 +36,7 @@ class AjaxController extends \app\components\Controller
 
 		parent::init();
 	}
-	
+
 	public function actionCgood()
 	{
 		$_SESSION['cgood'] = 1;
@@ -47,8 +47,8 @@ class AjaxController extends \app\components\Controller
 		$model = new Leads();
 
 		$success = false;
-		$msg = "Сообщение отправлено!";
-		$error = "Произошла ошибка";
+		$msg = Yii::$app->langs->t("Сообщение отправлено!");
+		$error = Yii::$app->langs->t("Произошла ошибка");
 		$repeattoclient = false;
 		$subscribe = false;
         $subscribemodel = "";
@@ -88,7 +88,7 @@ class AjaxController extends \app\components\Controller
 				Yii::$app->mailer->compose(['html' => 'form'],['postData' => $this->postData])
 					->setTo($this->postData["E-mail"])
 					->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->params['HOST']])
-					->setSubject($this->postData["Форма"] . " " . Yii::$app->params['HOST'])
+					->setSubject($this->postData["Form"] . " " . Yii::$app->params['HOST'])
 					->send();
 			}
 
@@ -115,7 +115,7 @@ class AjaxController extends \app\components\Controller
 	{
 		$success = false;
 		$error = '';
-		$msg = 'Файл загружен';
+		$msg = Yii::$app->langs->t('Файл загружен');
 
 		$files = [];
 
@@ -152,8 +152,8 @@ class AjaxController extends \app\components\Controller
 	public function actionAddcomment()
 	{
 		$success = false;
-		$msg = "Комментарий отправлен!";
-		$error = "Произошла ошибка";
+		$msg = Yii::$app->langs->t("Комментарий отправлен!");
+		$error = Yii::$app->langs->t("Произошла ошибка");
 
 		if(isset($this->postData["pid"], $this->postData["post_id"], $this->postData["model"], $this->postData["text"])){
 			if(\Yii::$app->db->createCommand('INSERT INTO `comments`(`post_id`, `model`, `pid`, `text`, `name`, `email`) VALUES (:post_id,:model,:pid,:text,:name,:email);')
@@ -194,7 +194,7 @@ class AjaxController extends \app\components\Controller
 		$html = "";
 		$success = false;
 		$msg = "";
-		$error = "Произошла ошибка";
+		$error = Yii::$app->langs->t("Произошла ошибка");
 
 		if(isset($this->postData["id"]) && $this->postData["id"] != ""){
 			$item = Items::findOne($this->postData["id"]);
@@ -213,7 +213,7 @@ class AjaxController extends \app\components\Controller
         $html = '';
         $success = false;
         $msg = "";
-        $error = "Произошла ошибка";
+        $error = Yii::$app->langs->t("Произошла ошибка");
 
         if(isset($this->postData["id"])) {
             if($model = Orders::findOne($this->postData["id"])) {
@@ -225,7 +225,7 @@ class AjaxController extends \app\components\Controller
 
                     $add = Yii::$app->catalog->addToCart($item->item_id, $item->qty, $vars);
                     if($add["success"]) {
-                        $msg = "Товары добавлены в корзину";
+                        $msg = "Added to cart";
                         $success = true;
                     }
                     else {
@@ -248,7 +248,7 @@ class AjaxController extends \app\components\Controller
 		$html = '';
 		$success = false;
 		$msg = "";
-		$error = "Произошла ошибка";
+		$error = Yii::$app->langs->t("Произошла ошибка");
 
 		if(isset($this->postData["method"])) {
 			$this->postData["qty"] = (isset($this->postData["qty"]) && $this->postData["qty"] > 0 ? (int) $this->postData["qty"] : 1);
@@ -256,7 +256,7 @@ class AjaxController extends \app\components\Controller
 			if($this->postData["method"] == "truncate") {
 				if(Cart::findOne(['sid' => \Yii::$app->params['cartSID']])->delete()){
 					$success = true;
-					$msg = "Товары удалены";
+					$msg = Yii::$app->langs->t("Товары удалены");
 				}
 			}
 			else {
@@ -264,7 +264,7 @@ class AjaxController extends \app\components\Controller
 					if ($this->postData["method"] == "add") {
 						$add = Yii::$app->catalog->addToCart($this->postData["id"], $this->postData["qty"], (isset($this->postData["vars"]) ? $this->postData["vars"] : []), (isset($this->postData["color"]) ? $this->postData["color"] : ""), (isset($this->postData["size"]) ? $this->postData["size"] : ""));
 						if($add["success"]) {
-                            $msg = "Товар добавлен в корзину";
+                            $msg = "Added to cart";
                             $success = true;
                         }
                         else {
@@ -274,7 +274,7 @@ class AjaxController extends \app\components\Controller
 					elseif ($this->postData["method"] == "delete") {
 						if(Cart::findOne(['id' => $this->postData["id"], 'sid' => \Yii::$app->params['cartSID']])->delete()){
 							$success = true;
-							$msg = "Товар удален";
+							$msg = Yii::$app->langs->t("Товар удален");
 						}
 					}
 				}
@@ -300,7 +300,7 @@ class AjaxController extends \app\components\Controller
 
 		$success = false;
 		$msg = "";
-		$error = "Произошла ошибка";
+		$error = Yii::$app->langs->t("Произошла ошибка");
 
 		if(isset($this->postData["id"], $this->postData["qty"]) && $this->postData["id"] != "" && $this->postData["qty"] > 0) {
 			$cart = Cart::find()->where(["id" => $this->postData["id"]])->one();
@@ -342,7 +342,7 @@ class AjaxController extends \app\components\Controller
 
 		$success = false;
 		$msg = "";
-		$error = "Произошла ошибка";
+		$error = Yii::$app->langs->t("Произошла ошибка");
 
 		if(isset($this->postData["id"]) && $this->postData["id"] != "") {
 			$price = \Yii::$app->catalog->deliveryPrice($this->postData["id"]);
@@ -377,7 +377,7 @@ class AjaxController extends \app\components\Controller
 
 		$success = false;
 		$msg = "";
-		$error = "Произошла ошибка";
+		$error = Yii::$app->langs->t("Произошла ошибка");
 
 		if(isset($this->postData["code"]) && $this->postData["code"] != "") {
 			$promocode = Promocodes::find()->where(["name" => $this->postData["code"], "vis" => 1])->one();
@@ -462,20 +462,20 @@ class AjaxController extends \app\components\Controller
 
 						$success = true;
 
-						$msg = "Промо-код применен!";
+						$msg = Yii::$app->langs->t("Промо-код применен!");
 					}
 					else {
-						$error = "Промо-код не совпадает с условиями";
+						$error = Yii::$app->langs->t("Промо-код не совпадает с условиями");
 					}
 
 				}
 				else {
-					$error = "Промо-код больше не актуален";
+					$error = Yii::$app->langs->t("Промо-код больше не актуален");
 				}
 
 			}
 			else {
-				$error = "Промо-код не найден";
+				$error = Yii::$app->langs->t("Промо-код не найден");
 			}
 		}
 
@@ -500,7 +500,7 @@ class AjaxController extends \app\components\Controller
 		$html = '';
 		$success = false;
 		$msg = "";
-		$error = "Произошла ошибка";
+		$error = Yii::$app->langs->t("Произошла ошибка");
 
 		if(isset($this->postData["id"], $this->postData["method"]))
 		{
@@ -511,10 +511,10 @@ class AjaxController extends \app\components\Controller
 					\Yii::$app->session["compares"] = $compares;
 
 					$success = true;
-					$msg = "Добавлено!";
+					$msg = "Added to wishlist!";
 				}
 				else {
-					$error = "Уже есть в сравнении";
+					$error = "Already exists in wishlist";
 				}
 			}
 			elseif($this->postData["method"] == "delete"){
@@ -523,7 +523,7 @@ class AjaxController extends \app\components\Controller
 				\Yii::$app->session["compares"] = $compares;
 
 				$success = true;
-				$msg = "Удалено!";
+				$msg = "Removed from wishlist!";
 			}
 
 		}
@@ -542,7 +542,7 @@ class AjaxController extends \app\components\Controller
 		$html = '';
 		$success = false;
 		$msg = "";
-		$error = "Произошла ошибка";
+		$error = Yii::$app->langs->t("Произошла ошибка");
 
 		if(isset($this->postData["id"], $this->postData["method"]))
 		{
@@ -553,7 +553,7 @@ class AjaxController extends \app\components\Controller
 					\Yii::$app->session["favorites"] = $favorites;
 
 					$success = true;
-					$msg = "Добавлено!";
+					$msg = "Added to wishlist!";
 				}
 				else {
                     $favorites = \Yii::$app->session["favorites"];
@@ -561,7 +561,7 @@ class AjaxController extends \app\components\Controller
                     \Yii::$app->session["favorites"] = $favorites;
 
                     $success = true;
-                    $msg = "Удалено!";
+                    $msg = "Removed from wishlist!";
 				}
 			}
 			elseif($this->postData["method"] == "delete"){
@@ -570,7 +570,7 @@ class AjaxController extends \app\components\Controller
 				\Yii::$app->session["favorites"] = $favorites;
 
 				$success = true;
-				$msg = "Удалено!";
+				$msg = "Removed from wishlist!";
 			}
 
 		}
@@ -587,8 +587,8 @@ class AjaxController extends \app\components\Controller
 	public function actionSitemap()
 	{
 		$success = true;
-		$msg = "Карта сайта сгенерирована!";
-		$error = "Произошла ошибка";
+		$msg = Yii::$app->langs->t("Карта сайта сгенерирована!");
+		$error = Yii::$app->langs->t("Произошла ошибка");
 
 		$sitemap = $this->siteMap();
 
@@ -600,8 +600,8 @@ class AjaxController extends \app\components\Controller
 	public function actionAdditemreview()
 	{
 		$success = false;
-		$msg = "Отзыв добавлен и скоро появится на сайте!";
-		$error = "Произошла ошибка";
+		$msg = Yii::$app->langs->t("Отзыв добавлен и скоро появится на сайте!");
+		$error = Yii::$app->langs->t("Произошла ошибка");
 
 		if(isset($this->postData["item_id"], $this->postData["name"], $this->postData["text"]) && $this->postData["item_id"] != "" && $this->postData["email"] != "" && $this->postData["text"] != "") {
 			$model = new ItemsReviews();
@@ -615,10 +615,10 @@ class AjaxController extends \app\components\Controller
 			if($model->save()) {
 				$to = explode(",", Yii::$app->params["settings"][1]);
 
-				if(Yii::$app->mailer->compose(['html' => 'text'],['text' => "На сайте новый отзыв о товаре ID".$model->item_id])
+				if(Yii::$app->mailer->compose(['html' => 'text'],['text' => Yii::$app->langs->t("На сайте новый отзыв о товаре ID").$model->item_id])
 					->setTo($to)
 					->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->params['HOST']])
-					->setSubject("Новый отзыв о товаре" . " " . Yii::$app->params['HOST'])
+					->setSubject(Yii::$app->langs->t("Новый отзыв о товаре") . " " . Yii::$app->params['HOST'])
 					->send())
 				{
 					$success = true;
@@ -635,8 +635,8 @@ class AjaxController extends \app\components\Controller
 	public function actionAddreview()
 	{
 		$success = false;
-		$msg = "Отзыв добавлен и скоро появится на сайте!";
-		$error = "Произошла ошибка";
+		$msg = Yii::$app->langs->t("Отзыв добавлен и скоро появится на сайте!");
+		$error = Yii::$app->langs->t("Произошла ошибка");
 
 		if(isset($this->postData["name"], $this->postData["text"]) && $this->postData["email"] != "" && $this->postData["text"] != "") {
 			$model = new Reviews();
@@ -649,10 +649,10 @@ class AjaxController extends \app\components\Controller
 			if($model->save()) {
 				$to = explode(",", Yii::$app->params["settings"][1]);
 
-				if(Yii::$app->mailer->compose(['html' => 'text'],['text' => "На сайте новый отзыв"])
+				if(Yii::$app->mailer->compose(['html' => 'text'],['text' => Yii::$app->langs->t("На сайте новый отзыв")])
 					->setTo($to)
 					->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->params['HOST']])
-					->setSubject("Новый отзыв" . " " . Yii::$app->params['HOST'])
+					->setSubject(Yii::$app->langs->t("Новый отзыв") . " " . Yii::$app->params['HOST'])
 					->send())
 				{
 					$success = true;
@@ -718,7 +718,7 @@ class AjaxController extends \app\components\Controller
         if (isset($this->postData['price'])) {
             \Yii::$app->params['cart']["delivery_price"] = $this->postData['price'];
         }
-        
+
         if ( $this->postData['dtype'] == 1 ) {
 	        \Yii::$app->params['cart']["delivery_price"] = 0;
         }

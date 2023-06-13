@@ -5,6 +5,7 @@ use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 use kartik\file\FileInput;
 use yii\helpers\ArrayHelper;
+use app\models\Items;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Items */
@@ -76,7 +77,7 @@ use yii\helpers\ArrayHelper;
                 <?= $this->render( '/components/translates', ['model' => $model, 'form' => $form, "field" => "text", 'fieldData' => ["type" => "textArea"]] ); ?>
 
                 <?//= $this->render( '/components/uploader', ['model' => $model, 'form' => $form, 'field' => 'images', 'name' => 'imagesUploader'] ); ?>
-                <?= $this->render( '/components/uploader_custom/uploader_custom', ['model' => $model, 'form' => $form, 'field' => 'images', 'methodSize' => 'ra/250x250/'] ); ?>
+                <?= $this->render( '/components/uploader_custom/uploader_custom', ['model' => $model, 'form' => $form, 'field' => 'images', 'methodSize' => Items::UPLOAD_PATH] ); ?>
 
 
                 <legend>Размеры</legend>

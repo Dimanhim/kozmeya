@@ -1,12 +1,12 @@
 
-var galleryTop = new Swiper('.photos-slider', {  
+var galleryTop = new Swiper('.photos-slider', {
   direction: 'vertical',
   mousewheel: true
 });
 
 var galleryThumbs = new Swiper('.photos-nav', {
   direction: 'vertical',
-  spaceBetween: 20,  
+  spaceBetween: 20,
   slidesPerView: 4,
   touchRatio: 0.2,
   slideToClickedSlide: true,
@@ -32,10 +32,10 @@ $(".photos-nav .swiper-wrapper .swiper-slide").each(function(index){
   }
 });
 
-galleryTop.on('slideChange', function () {  
+galleryTop.on('slideChange', function () {
 
   galleryThumbs.slideTo(galleryTop.activeIndex);
-    
+
   $(".photos-nav .swiper-wrapper .swiper-slide").each(function(index){
     if(index == galleryTop.activeIndex){
       $(this).addClass("select")
@@ -59,7 +59,7 @@ $(document).ready(function() {
   $("#kuki-modal").modal("show");
 
   console.log($("#feedback-form").find("input[name=name]").data("mess"));
-  
+
   $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
     $('.product_slider').slick('setPosition');
   })
@@ -70,12 +70,12 @@ $(document).ready(function() {
     $(this).parents(".pf-item").find(".pf-item-val").text(value)
   });
 
-  $("input[name=color]").change(function(){  
+  $("input[name=color]").change(function(){
     var value = $(this).val();
     $(this).parents(".pf-item").find(".pf-item-val").text(value)
   });
 
-  $("input[name=size]").change(function(){  
+  $("input[name=size]").change(function(){
     var value = $(this).val();
     $(this).parents(".pf-item").find(".pf-item-val").text(value)
   });
@@ -109,7 +109,7 @@ $(document).ready(function() {
     if(top >= headerHeight){
       $(".top-nav").addClass("fix");
     } else{
-      $(".top-nav").removeClass("fix");      
+      $(".top-nav").removeClass("fix");
     }
 
   });
@@ -119,19 +119,19 @@ $(document).ready(function() {
   $("#feedback-form").validate({
       errorContainer: $(".form-error-mess"),
       rules: {
-        name: "required",        
-        phone: "required",        
+        name: "required",
+        phone: "required",
         email: {
           required: false
         }
       },
-      messages: {        
+      messages: {
         name: $("#feedback-form").find("input[name=name]").data("mess"),
         phone: $("#feedback-form").find("input[name=phone]").data("mess")
       }
     });
 
-  
+
   //form styler
   $('select').styler({
     selectSearch: true,
@@ -157,7 +157,7 @@ $(document).ready(function() {
   }
 
 
-    
+
 
 
   /*var $slider = $(".slider-product");
@@ -168,24 +168,24 @@ $(document).ready(function() {
     .slick({
       slidesToShow: 1,
       slidesToScroll: 1,
-      arrows: false,      
+      arrows: false,
       infinite: false,
       asNavFor: '.product-nav',
       vertical: true
     });
-  
+
   var $sliderNav = $(".product-nav");
-  $sliderNav    
+  $sliderNav
     .slick({
       slidesToShow: 4,
       slidesToScroll: 1,
       asNavFor: '.slider-product',
       prevArrow: '<div class="slider_prev1"><div class="sprite-slider-20"></div></div>',
-      nextArrow: '<div class="slider_next1"><div class="sprite-slider-21"></div></div>',        
-      infinite: false,      
+      nextArrow: '<div class="slider_next1"><div class="sprite-slider-21"></div></div>',
+      infinite: false,
       vertical: true,
       focusOnSelect: true
-    });  */  
+    });  */
 
 
 
@@ -203,7 +203,7 @@ $(document).ready(function() {
         {
           breakpoint: 1470,
           settings: {
-            
+
           }
         },
         {
@@ -297,9 +297,9 @@ $(document).ready(function() {
     /*$("#size_btn").hover(function(){
       $("#size_modal").modal("show");
     });*/
-    
-    $(".fly-backet-list").mCustomScrollbar({theme:"dark-2"});    
-    
+
+    $(".fly-backet-list").mCustomScrollbar({theme:"dark-2"});
+
     if(winWidth <= 768){
 
       $(".have-submenu").click(function(){
@@ -330,64 +330,64 @@ $(document).ready(function() {
     }, function(){
       $("body").removeClass("overlay-max");
     });
-  
-    $(".backet-sm").hover(function(){      
-      $("body").addClass("overlay-max");
-    }, function(){      
-      $("body").removeClass("overlay-max");
-    });     
 
-    $(".call-profile").hover(function(){      
+    $(".backet-sm").hover(function(){
       $("body").addClass("overlay-max");
-    }, function(){      
+    }, function(){
       $("body").removeClass("overlay-max");
     });
-                
-    $(".call-search").hover(function(){          
+
+    $(".call-profile").hover(function(){
       $("body").addClass("overlay-max");
-    }, function(){          
+    }, function(){
       $("body").removeClass("overlay-max");
     });
-     
+
+    $(".call-search").hover(function(){
+      $("body").addClass("overlay-max");
+    }, function(){
+      $("body").removeClass("overlay-max");
+    });
+
     //mask input
     // $("#tel, input[type=tel]").mask("+7 (999) 999-9999");
     // $("#phone").mask("+7 (999) 999-9999");
-    
+
     //email validator
     $('#mail').blur(function() {
       if($(this).val() != '»') {
         var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
         if(pattern.test($(this).val())){
           $(this).css({'border' : '1px solid #569b44'});
-          $('#valid').text('Верно');
+          $('#valid').text('True');
           $('#valid').css({'color' : '#569b44'});
         } else {
           $(this).css({'border' : '1px solid #ff0000'});
-          $('#valid').text('Не верно');
+          $('#valid').text('Not true');
           $('#valid').css({'color' : '#ff0000'});
         }
       } else {
         $(this).css({'border' : '1px solid #ff0000'});
-        $('#valid').text('Поле email не должно быть пустым');
+        $('#valid').text('Email field must not be empty');
       }
     });
 
-    $('#email').blur(function() {  
+    $('#email').blur(function() {
       if($(this).val() != '') {
         var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
         if(pattern.test($(this).val())){
           $(this).css({'border' : '1px solid #569b44'});
           $('#valid').css({'color' : '#009853'});
-          $('#valid').text('Верно');
+          $('#valid').text('True');
         } else {
           $(this).css({'border' : '1px solid #ff0000'});
           $('#valid').css({'color' : '#fd0000'});
-          $('#valid').text('Не верно');
+          $('#valid').text('Not true');
         }
       } else {
           $(this).css({'border' : '1px solid #ff0000'});
           $('#valid').css({'color' : '#fd0000'});
-          $('#valid').text('Поле email не должно быть пустым');
+          $('#valid').text('Email field must not be empty');
       }
     });
 
@@ -408,7 +408,7 @@ $(document).ready(function() {
     });
     //email validator end
 
-     
+
 
 
     validation_scripts();
@@ -499,7 +499,7 @@ $.fn.notify = function(settings_overwrite){
   document.getElementById("close2").onclick = function() {
       document.getElementById('edit-modal').style.display = "none";
   }
-  
+
   window.onclick = function(event) {
       if (event.target == document.getElementById('edit-modal')) {
           document.getElementById('edit-modal').style.display = "none";
@@ -538,7 +538,7 @@ if(document.getElementById('address-modal') && document.getElementById("address_
 
 function preventDigits(sender) {
   sender.value = sender.value.replace(/\d/g, "");
-  sender.value = sender.value.replace(/[^а-я А-Я]/g.exec(sender.value), '');
+  //sender.value = sender.value.replace(/[^а-я А-Я]/g.exec(sender.value), '');
 }
 
 function validation_scripts() {
@@ -581,7 +581,7 @@ function validateForm(form) {
 
     if ( !error && form.find('.required--reset-password').length ) {
     	if ( form.find('.required--reset-password').eq(0).val() != form.find('.required--reset-password').eq(1).val() ) {
-    		alertMessage('Пароли не совпадают', 'error', 'top');
+    		alertMessage('Password mismatch', 'error', 'top');
 	      return false;
     	}
     };
@@ -589,9 +589,9 @@ function validateForm(form) {
     if ( error ) {
         if ( $('.input--error.required--rus:not([disabled]):visible', form).length ) {
         	$('.input--error.required--rus:not([disabled]):visible', form).focus();
-            alertMessage('Введите имя на русском', 'error', 'top');
+            alertMessage('Enter a name', 'error', 'top');
         } else {
-            alertMessage('Нужные поля не заполнены', 'error', 'top');
+            alertMessage('Required fields are not filled', 'error', 'top');
             $('.input--error:not([disabled]):visible:first', form).focus();
         }
         return false;

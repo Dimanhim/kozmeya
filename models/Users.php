@@ -201,12 +201,12 @@ class Users extends ActiveRecord implements IdentityInterface
 
     public function register($data, $email = true, $autologin = true){
         $success = false;
-        $error = "Произошла ошибка";
+        $error = Yii::$app->langs->t("Произошла ошибка");;
 
         $model = new Users();
 
         if(Users::findOne(["username" => $data["email"]]) || Users::findOne(["email" => $data["email"]])) {
-            $error = "Пользователь с таким логином или e-mail уже существует";
+            $error = Yii::$app->langs->t("Пользователь с таким логином или e-mail уже существует");
         }
         else {
             if (isset($data["email"], $data["password"]) && $data["email"] != "" && $data["password"] != "") {
@@ -222,7 +222,7 @@ class Users extends ActiveRecord implements IdentityInterface
                     $success = true;
 
                     if($email) {
-                        $subject = (isset(\Yii::$app->params['settingsForms']["email_templates"]["new_user_subject"]) ? $model->regenTemplate(\Yii::$app->params['settingsForms']["email_templates"]["new_user_subject"], $data) : "Добро пожаловать на сайт! Ваш логин: ".$model->username."<br>Ваш пароль: ".$data["password"]);
+                        $subject = (isset(\Yii::$app->params['settingsForms']["email_templates"]["new_user_subject"]) ? $model->regenTemplate(\Yii::$app->params['settingsForms']["email_templates"]["new_user_subject"], $data) : Yii::$app->langs->t("Добро пожаловать на сайт!").' '.Yii::$app->langs->t("Ваш логин").': '.$model->username.'<br>'.Yii::$app->langs->t("Ваш пароль").': '.$data["password"]);
                         $msg = (isset(\Yii::$app->params['settingsForms']["email_templates"]["new_user"]) ? $model->regenTemplate(\Yii::$app->params['settingsForms']["email_templates"]["new_user"], $data) : "Регистрация на сайте" . " " . Yii::$app->params['HOST']);
 
 
@@ -240,7 +240,7 @@ class Users extends ActiveRecord implements IdentityInterface
 
             }
             else {
-                $error = "Заполните обязательные поля";
+                $error = Yii::$app->langs->t("Заполните обязательные поля");
             }
         }
 

@@ -19,7 +19,7 @@ use yii\helpers\Html;
             <button type="submit">Найти</button>
         </form>
 
-        <div>Найдено <?=count($sections);?> <?=\Yii::$app->functions->plural(count($sections), "результат", "результата", "результатов");?> по запросу “<?=(isset($_GET["s"]) ? $_GET["s"] : "");?>”</div>
+        <div><?= Yii::$app->langs->t("Найдено")?> <?=count($sections);?> <?=\Yii::$app->functions->plural(count($sections), Yii::$app->langs->t("результат"), Yii::$app->langs->t("результата"), Yii::$app->langs->t("результатов"));?> по запросу “<?=(isset($_GET["s"]) ? $_GET["s"] : "");?>”</div>
 
 
         <? if($sections) foreach($sections as $k=>$v):?>
@@ -27,7 +27,7 @@ use yii\helpers\Html;
                 <a href="<?=$v["url"];?>" class="name"><?=$v["name"];?></a>
                 <div class="text">
                     <? if(isset($v["image"]) && $v["image"] != ""):?><img src="<?=$v["image"];?>"><? endif;?>
-                    <a href="<?=$v["url"];?>">Перейти</a>
+                    <a href="<?=$v["url"];?>"><?= Yii::$app->langs->t("Перейти")?></a>
                 </div>
             </div>
         <? endforeach;?>

@@ -18,7 +18,7 @@ use app\components\Paginator;
         </div>
         <div class="col-md-9"><?=$item->text;?></div>
         <div class="col-xs-12">
-            <br><a href="/<?=$page->alias;?>" class="red__btn red__btn-arrow-left fright">к списку брендов</a>
+            <br><a href="/<?=$page->alias;?>" class="red__btn red__btn-arrow-left fright"><?=Yii::$app->langs->t("к списку брендов")?></a>
         </div>
     </div>
 
@@ -58,7 +58,7 @@ use app\components\Paginator;
     </div>
     <div class="gr-line clearfix">
         <div class="gr-onleft fleft">
-            <div class="gr-title">Показывать на странице</div>
+            <div class="gr-title"><?=Yii::$app->langs->t("Показывать на странице")?></div>
             <div class="gr-another">
                 <div class="gr-sort">
                     <a href="/<?=$uri;?>?pageSize=20" class="el-count <? if($pageSize == 20):?>act<? endif;?>">20</a>

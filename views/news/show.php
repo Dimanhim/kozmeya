@@ -20,8 +20,8 @@ use yii\helpers\Html;
                 <?=$item->text;?>
             </article>
             <div class="clearfix nav-sh">
-                <? if($prev):?><div class="fleft"><a href="<?=$prev->url;?>">предыдущая</a></div><? endif;?>
-                <? if($next):?><div class="fright"><a href="<?=$next->url;?>">следующая</a></div><? endif;?>
+                <? if($prev):?><div class="fleft"><a href="<?=$prev->url;?>"><?=Yii::$app->langs->t("предыдущая")?></a></div><? endif;?>
+                <? if($next):?><div class="fright"><a href="<?=$next->url;?>"><?=Yii::$app->langs->t("следующая")?></a></div><? endif;?>
             </div>
         </div>
     </div>
@@ -29,15 +29,15 @@ use yii\helpers\Html;
     <? if($also):?>
     <div class="gray__section">
         <div class="container news__obj">
-            <div class="tag-elem">Интернет-магазин</div>
-            <h3 class="h-3">Новости</h3>
+            <div class="tag-elem"><?=Yii::$app->langs->t("Интернет-магазин")?></div>
+            <h3 class="h-3"><?=Yii::$app->langs->t("Новости")?></h3>
             <div class="row">
                 <? foreach($also as $k=>$v):?>
                     <?= $this->render( '/news/parts/item', ['v' => $v, 'class' => 'col-md-4 news-elem-out'] ); ?>
                 <? endforeach;?>
             </div>
 
-            <a href="/<?=$page->alias;?>" class="red__btn red__btn-arrow pos-t-r">все новости</a>
+            <a href="/<?=$page->alias;?>" class="red__btn red__btn-arrow pos-t-r"><?=Yii::$app->langs->t("все новости")?></a>
         </div>
     </div>
     <? endif;?>

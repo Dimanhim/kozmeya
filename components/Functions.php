@@ -109,12 +109,12 @@ class Functions  extends Component
 
         return "/".Yii::$app->params['uploadDir'].($method ? "/".$method : "").($size ? "/".$size : "")."/".$this->getModelName($model)."/".$item[0];
     }
-    
+
     public function getUploadItemNext($model, $field = "images", $method = "", $size = ""){
-        
+
         $items = explode(';', $model->{$field});
         $item = '';
-        
+
         if ($items)
         {
 	        $i = 0;
@@ -123,7 +123,7 @@ class Functions  extends Component
 		        if ( $v != '' )
 		        {
 			        $i++;
-			        if ( $i > 1 ) 
+			        if ( $i > 1 )
 			        {
 				       $item = $v;
 				       break;
@@ -131,13 +131,13 @@ class Functions  extends Component
 		        }
 	        }
         }
-        
+
        // $item = ($items ? array_shift($items) : '');
         $item = explode("::", $item);
 
         return "/".Yii::$app->params['uploadDir'].($method ? "/".$method : "").($size ? "/".$size : "")."/".$this->getModelName($model)."/".$item[0];
     }
-    
+
     public function getLang( $lang = '' )
     {
 	    if ( $lang == 'ru' )
@@ -219,6 +219,11 @@ class Functions  extends Component
 
     public function setPhoto($photo, $method = "", $size = ""){
         return str_replace("{options}", ($method != "" ? $method.($size != "" ? "/" : "") : "").$size, $photo);
+    }
+    public function setPhotoMain($photo){
+        $symb = ["{options}", "/Items"];
+        $replaced = ['', 'Items'];
+        return str_replace($symb, $replaced, $photo);
     }
 
     public function uploaderSimple(&$model, $field, $fileField = "images", $index = 0, $folder = ""){

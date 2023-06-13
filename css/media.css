@@ -7,17 +7,17 @@
 
 }
 
-@media screen and (max-width: 1470px) {	
-	
+@media screen and (max-width: 1470px) {
+
 	.catalog_filter.fixed{
 		max-width: 100%;
 		min-width: 100%;
 		padding: 15px;
-	}	
-	
+	}
+
 	.header_top{
 		background-size: cover;
-	}	
+	}
 
 }
 
@@ -27,7 +27,7 @@
 		display: none;
 	}
 
-		
+
 }
 
 @media screen and (max-width: 992px) {
@@ -37,7 +37,7 @@
 	}
 
 	.lang_changer{
-		float: none;		
+		float: none;
 		width: auto;
 	}
 
@@ -97,7 +97,7 @@
 
 	.main_banner-left .main_banner-btn, .main_banner-right .main_banner-btn{
 		margin-top: 15px;
-		margin-bottom: 20px;	
+		margin-bottom: 20px;
 	}
 
 	.main_banner-img{
@@ -128,7 +128,7 @@
 	}
 
 	.main_slider .dot{
-		position: static;		
+		position: static;
 	}
 
 	.main_slider{
@@ -164,7 +164,7 @@
 	}
 
 	.catalog_filter li{
-		min-width: auto;		
+		min-width: auto;
 		margin: 0 15px 5px 0;
 	}
 
@@ -222,13 +222,13 @@
 	.header_text h1{
 		font-size: 20px;
 	}
-	
+
 	.top_line{
 		margin-bottom: 15px;
 	}
 
 	.header{
-		padding: 0 0 15px 0;		
+		padding: 0 0 15px 0;
 	}
 
 	.logo{
@@ -236,7 +236,7 @@
 	}
 
 	.top_line .logo img{
-		width: 76px;
+		width: 86px;
 	}
 
 	.top_line{
@@ -311,7 +311,7 @@
 
 	.cart_order-menu{
 		display: none;
-	}	
+	}
 
 	.cartPrices{
 	    margin-top: 0;
@@ -343,7 +343,7 @@
 	}
 
 	.cart-table .jq-selectbox{
-		display: inline-block;		
+		display: inline-block;
 	}
 
 	.tracking_section{
@@ -361,13 +361,13 @@
 
 	.filter-nav li:last-child .filter-box{
 		width: auto;
-		left: -15px;		
+		left: -15px;
 		right: -15px;
 	}
 
 	.filter-box{
 		width: auto;
-		left: -15px;		
+		left: -15px;
 		right: -15px;
 	}
 
@@ -380,7 +380,7 @@
 	}
 
 	.filter-btn{
-		text-align: center;		
+		text-align: center;
 	}
 
 	.catalog_filter{
@@ -424,7 +424,7 @@
 	}
 
 	.search_line input{
-		border: none;		
+		border: none;
 	}
 
 	.search-input{
@@ -453,7 +453,7 @@
 		display: block;
 		width: 50%;
 		padding: 0 10px;
-		float: left;		
+		float: left;
 		margin-bottom: 15px;
 	}
 
@@ -484,10 +484,10 @@
 		margin: 0;
 	}
 
-	
+
 }
 
-@media screen and (max-width: 567px) {	
+@media screen and (max-width: 567px) {
 
 	.footer_form .form .input{
 		margin: 0;
@@ -555,7 +555,7 @@
 		min-width: 100% !important;
 		width: 100%;
 		left: 0 !important;
-		top: 100% !important;	
+		top: 100% !important;
 
 	}
 
@@ -633,7 +633,7 @@
 		padding: 0 5px;
 	}
 
-	
+
 }
 
 
@@ -665,7 +665,7 @@
 
 	.my_title small a{
 		margin: 0 5px;
-	}	
+	}
 
 	.top_line [class*="col-"]{
 		position: static;
@@ -690,7 +690,7 @@
 	.top_right-buttons > a:first-child{
 		margin-left: 0;
 	}
-	
+
 	.back-to-shop{
 		font-size: 12px;
 	}

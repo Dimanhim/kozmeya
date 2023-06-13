@@ -7,6 +7,9 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+$bodyId = '';
+$bodyId = 'invert';
+
 
 AppAsset::register($this);
 \Yii::$app->params['frontPage'] = (Yii::$app->controller->id == "site" && Yii::$app->controller->action->id == "index" ? true : false);
@@ -50,7 +53,7 @@ AppAsset::register($this);
     <script type="text/javascript" src="/js/popper.js"></script>
 </head>
 <? \Yii::$app->params['bodyClass'] = "";?>
-<body class="<?=(\Yii::$app->params['errorPage'] ? "" : (\Yii::$app->params['frontPage'] ? "" : \Yii::$app->params['bodyClass']));?>">
+<body class="<?=(\Yii::$app->params['errorPage'] ? "" : (\Yii::$app->params['frontPage'] ? "" : \Yii::$app->params['bodyClass']));?>" id="<?= $bodyId ?>">
     <div class="box-overlay" onclick="void(0)"></div>
     <div class="">
     <?php $this->beginBody() ?>
@@ -66,7 +69,7 @@ AppAsset::register($this);
     <div class="container">
     <?= $this->render('/parts/footer', [] ); ?>
     </div>
-    
+
     <?= $this->render('/parts/popups', [] ); ?>
 
     <?php $this->endBody() ?>
@@ -74,9 +77,9 @@ AppAsset::register($this);
 
     <? /* SEO SCRIPTS */?>
 
-    
+
     <?=Yii::$app->params["settings"][4];?>
-    
+
     <script type="text/javascript" src="/js/jquery.formstyler.min.js"></script>
 
     <script>
