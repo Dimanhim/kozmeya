@@ -38,7 +38,9 @@ class AppAsset extends AssetBundle
             'css/sprites.css?ver=222',
             'css/bootstrap.css?ver=222',
             'css/slick.css?ver=222',
+            'css/slick-theme.css?ver=222',
             'css/swiper.css?ver=222',
+            'css/jquery.fancybox.min.css?ver=222',
             'css/project.css?ver='.mt_rand(1000,10000),
             'css/media.css?ver='.mt_rand(1000,10000),
             'js/_system/alertify/css/alertify.min.css?ver=222',
@@ -51,8 +53,9 @@ class AppAsset extends AssetBundle
     private static function getJs() {
         return [
             'js/bootstrap.min.js',
-            'js/slick.js',
+            'js/slick.min.js',
             'js/swiper.min.js',
+            'js/jquery.fancybox.min.js',
             'js/lib.js',
             'js/jquery.mCustomScrollbar.concat.min.js',
             'js/jquery.validate.min.js',

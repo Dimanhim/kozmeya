@@ -1,8 +1,10 @@
 <?php
 return [
-    'adminEmail' => 'leetoplayaz@yandex.ru',
+    'adminEmail' => 'dimanhim@list.ru',
+    //'adminEmail' => 'leetoplayaz@yandex.ru',
     //'supportEmail' => 'info@'.$_SERVER["HTTP_HOST"],
-    'supportEmail' => 'info@mania.ru',
+    //'supportEmail' => 'info@mania.ru',
+    'supportEmail' => 'request@kozmeya.com',
     'HOST' => "http://".$_SERVER["HTTP_HOST"]."/",
     'PATH' => $_SERVER["DOCUMENT_ROOT"],
 

@@ -127,15 +127,19 @@ class ProfileController extends \app\components\Controller
     public function actionRegister()
     {
         if (Yii::$app->request->isAjax) {
+            file_put_contents('info-log.txt', date('d.m.Y H:i:s').' - '.print_r('register', true)."\n", FILE_APPEND);
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 
             $msg = Yii::$app->langs->t("Добро пожаловать на сайт!");
 
             $data = \Yii::$app->request->post();
+            file_put_contents('info-log.txt', date('d.m.Y H:i:s').' data - '.print_r($data, true)."\n", FILE_APPEND);
             $result = Users::register($data);
+            file_put_contents('info-log.txt', date('d.m.Y H:i:s').' result - '.print_r($result, true)."\n", FILE_APPEND);
             $success = $result["success"];
             $error = $result["error"];
-
+            $response = ['success' => $success, 'msg' => $msg, 'error' => $error];
+            file_put_contents('info-log.txt', date('d.m.Y H:i:s').' response - '.print_r($response, true)."\n", FILE_APPEND);
             return ['success' => $success, 'msg' => $msg, 'error' => $error];
         }
 

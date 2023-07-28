@@ -224,6 +224,9 @@ class Categories extends \yii\db\ActiveRecord
                 if($categoryData['id'] == $this->id) return true;
             }
         }
+        if($category = Categories::findOne(['alias' => $alias])) {
+            if($category->parent == $this->id) return true;
+        }
         return false;
     }
 }

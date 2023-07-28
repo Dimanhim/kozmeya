@@ -3,6 +3,40 @@ var body;
 $(function() {
 	body = $('body');
 
+
+
+	function mobileBody() {
+        if($(window).width() < 767) {
+            body.addClass('mobile-body').removeClass('desktop-body')
+        }
+        else {
+            body.removeClass('mobile-body').addClass('desktop-body')
+        }
+    }
+
+    mobileBody();
+
+	$(window).resize(function() {
+	    mobileBody()
+    })
+
+    $('body').on('click', '.main_menu > ul > li > a', function(e) {
+        e.preventDefault();
+        let next = $(this).next();
+        if(next.hasClass('submenu')) {
+            next.addClass('submenu-opened')
+        }
+    });
+
+	$('.slick-product').slick({
+        //infinite: true,
+        //slidesToShow: 1,
+        dots: true,
+        arrows: false,
+        mobileFirst: true,
+        //prevArrow: false,
+        //nextArrow: false,
+    })
 	$('body').on('click', '.cgood-btn', function(e) {
 	    e.preventDefault();
 	    $('.cookies-banner').fadeOut()
@@ -85,6 +119,7 @@ $(function() {
     body.on('submit', 'form.form-ajax', function(){
         var form = $(this);
         var error = validateForm(form);
+        console.log('error', error)
 
         if(!error){
             $.ajax({
@@ -97,7 +132,7 @@ $(function() {
 
                         $("#feedback-modal").modal("hide");
                         $("#thanks-modal").modal("show");
-                        //alertify.success(data.msg);
+                        alertify.success(data.msg);
 
                     }
                     else {
@@ -247,7 +282,8 @@ $(function() {
                     window.location.replace("/cart?step=3");
                 }
                 else {
-                    window.location.replace("/profile");
+                    //window.location.replace("/profile");
+                    window.location = "/profile";
                 }
             }
             else {

@@ -47,7 +47,7 @@ $config = [
                 'extra' => false,        //use more compact algorithm
                 'no-comments' => false   //cut all the html comments
             ],
-            
+
         ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -84,17 +84,17 @@ $config = [
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
             //'useFileTransport' => true,
-            /*
+
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => '',
-                'username' => '',
-                'password' => '',
-                'port' => '',
+                'host' => 'smtp.yandex.ru',
+                //'username' => 'no-reply@kozmeya.com',
+                //'password' => 'lB8wI5fF8axZ3yB2',
+                'username' => 'request@kozmeya.com',
+                'password' => 'hrf1dwjnAnf4',
+                'port' => '465',
                 'encryption' => '',
             ],
-            */
-
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -266,12 +266,12 @@ $config = [
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
     if(YII_DEBUG){
-	    
+
         $config['bootstrap'][] = 'debug';
         $config['modules']['debug'] = ['class' => \yii\debug\Module::className(),'allowedIPs' => ['93.182.24.46']];
     }
 
-	
+
     $config['bootstrap'][] = 'gii';
 	$config['modules']['gii'] = ['class' => \yii\gii\Module::className(),'allowedIPs' => ['93.182.24.46']];
 }

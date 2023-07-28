@@ -1,3 +1,7 @@
+<?php
+// логика active пунктов меню
+
+?>
 <? if(isset(Yii::$app->params['menuCatsPid'][0])): $categoriesSale = \app\models\Categories::find()->joinWith("items")->where("items.special = 1 AND categories.parent != 0 AND categories.vis = 1 AND categories.menu = 1")->orderBy("categories.posled")->all();?>
     <ul class="d-md-flex justify-content-center">
         <?php $lastAlias = Yii::$app->params['lastAlias']; ?>

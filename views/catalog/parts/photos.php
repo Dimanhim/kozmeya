@@ -1,6 +1,7 @@
 <? $photos = \Yii::$app->functions->getUploadItems($item, "images");?>
 
 <div class="d-none d-md-block">
+    <!--<div class="d-md-none">-->
     <div class="row">
 
         <div class="col-md-2 offset-md-2">
@@ -33,9 +34,13 @@
 
     </div>
 </div>
-
+<?= $this->render('_mobile_photos', [
+    'photos' => $photos,
+]) ?>
+<!--
 <div class="d-md-none">
     <div class="mobile_product-image text-center">
         <img src="<?=\Yii::$app->functions->getUploadItem($item, "images", "ra", "565x848");?>" class="img-fluid">
     </div>
 </div>
+-->

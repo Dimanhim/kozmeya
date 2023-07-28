@@ -226,11 +226,11 @@ class Users extends ActiveRecord implements IdentityInterface
                         $msg = (isset(\Yii::$app->params['settingsForms']["email_templates"]["new_user"]) ? $model->regenTemplate(\Yii::$app->params['settingsForms']["email_templates"]["new_user"], $data) : "Регистрация на сайте" . " " . Yii::$app->params['HOST']);
 
 
-                        Yii::$app->mailer->compose(['html' => 'text'],['text' => $msg])
+                        /*Yii::$app->mailer->compose(['html' => 'text'],['text' => $msg])
                             ->setTo($model->email)
                             ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->params['HOST']])
                             ->setSubject($subject)
-                            ->send();
+                            ->send();*/
                     }
 
                     if($autologin) {

@@ -1,4 +1,4 @@
-
+// vertical slider
 var galleryTop = new Swiper('.photos-slider', {
   direction: 'vertical',
   mousewheel: true
@@ -51,7 +51,7 @@ var sizePhotos = $(".photos-nav .swiper-wrapper .swiper-slide").length;
 if(sizePhotos <= 4){
   $(".photos-arrow").addClass("hide");
 }
-
+// END vertical slider
 
 
 $(document).ready(function() {

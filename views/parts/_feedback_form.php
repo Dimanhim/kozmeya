@@ -1,6 +1,6 @@
 <div class="modal_title"><?=Yii::$app->langs->t("Заполните форму, и мы перезвоним к вам в ближайшее время");?></div>
 <form id="feedback-form" class="form-ajax">
-    <input type="hidden" name="Форма" value="Свяжитесь с нами">
+    <input type="hidden" name="Form" value="Contact us">
     <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
 
     <div class="row">
@@ -10,7 +10,7 @@
                        class="form-control"
                        name="name"
                        placeholder="<?=Yii::$app->langs->t("Ваше имя");?>*"
-                       data-mess="введите свое имя">
+                       data-mess="Enter your name">
             </div>
 
             <div class="form-group position-relative">
@@ -19,7 +19,7 @@
                        name="phone"
                        id="tel"
                        placeholder="<?=Yii::$app->langs->t("Номер телефона");?>*"
-                       data-mess="введите номер телефона">
+                       data-mess="Enter phone number">
             </div>
 
             <div class="form-group position-relative">

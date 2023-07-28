@@ -256,7 +256,10 @@ i {
     margin: 0;
 }
 
-.main_menu li:hover .submenu{
+.desktop-body .main_menu li:hover .submenu{
+    display: block;
+}
+.main_menu li .submenu.submenu-opened {
     display: block;
 }
 
@@ -2844,7 +2847,13 @@ label{
     right: 0;
     font: 11px "ProximaNovaMedium", sans-serif;
 }
-
+.slick-dots li.slick-active button::before {
+    opacity: .75;
+    color: #fff;
+}
+.slick-dots li button::before {
+    color: #fff;
+}
 textarea.form-control{
     height: 184px;
 }

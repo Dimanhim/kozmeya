@@ -44,6 +44,7 @@ class AjaxController extends \app\components\Controller
 
 	public function actionForm()
 	{
+
 		$model = new Leads();
 
 		$success = false;
@@ -76,11 +77,21 @@ class AjaxController extends \app\components\Controller
         unset($this->postData["_subscribe"]);
         unset($this->postData["_subscribe_model"]);
 
-		if(Yii::$app->mailer->compose(['html' => 'form', /*'text' => ''*/],['postData' => $this->postData])
-			->setTo($to)
-			->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->params['HOST']])
-			->setSubject($this->postData["Форма"] . " " . Yii::$app->params['HOST'])
-			->send())
+
+
+        //file_put_contents('info-log.txt', date('d.m.Y H:i:s').'$this->postData - '.print_r($this->postData, true)."\n", FILE_APPEND);
+        //file_put_contents('info-log.txt', date('d.m.Y H:i:s').' supportEmail - '.print_r(Yii::$app->params['supportEmail'], true)."\n", FILE_APPEND);
+        //file_put_contents('info-log.txt', date('d.m.Y H:i:s').' host - '.print_r(Yii::$app->params['HOST'], true)."\n", FILE_APPEND);
+        //file_put_contents('info-log.txt', date('d.m.Y H:i:s').' to - '.print_r($to, true)."\n", FILE_APPEND);
+        //file_put_contents('info-log.txt', date('d.m.Y H:i:s').' Yii::$app->mailer - '.print_r(Yii::$app->mailer, true)."\n", FILE_APPEND);
+        $sendResult = Yii::$app->mailer->compose(['html' => 'form'],['postData' => $this->postData])
+            ->setTo($to)
+            ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->params['HOST']])
+            ->setSubject($this->postData["Form"] . " " . Yii::$app->params['HOST'])
+            ->send();
+        //info@maniamodeler.com
+        //file_put_contents('info-log.txt', date('d.m.Y H:i:s').'$sendResult - '.print_r($sendResult, true)."\n", FILE_APPEND);
+		if($sendResult)
 		{
 			$success = true;
 
@@ -107,8 +118,9 @@ class AjaxController extends \app\components\Controller
 			$model->save();
 		}
 
-
-		return ['success' => $success, 'msg' => $msg, 'error' => $error];
+		$result = ['success' => $success, 'msg' => $msg, 'error' => $error];
+		file_put_contents('info-log.txt', date('d.m.Y H:i:s').' result - '.print_r($result, true)."\n", FILE_APPEND);
+		return $result;
 	}
 
 	public function actionUpload()

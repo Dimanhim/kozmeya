@@ -8,7 +8,8 @@
 
                 <div class="tracking_descr d-flex align-items-start flex-column">
                     <span class="track_title">
-                        <a href="#">
+                        <a href="<?= $v->item ? $v->item->url : '#' ?>">
+                            <?php file_put_contents('info-log.txt', date('d.m.Y H:i:s').' cart item - '.print_r($v->item, true)."\n", FILE_APPEND); ?>
                             <?=Yii::$app->langs->modelt($v->item, "name");?>
                         </a>
                     </span>
@@ -29,7 +30,7 @@
                 <? for ($i=1; $i<=5; $i++):?>
                 <option value="<?=$i;?>" <? if($i == $v->qty):?>selected<? endif;?>><?=$i?></option>
                 <? endfor;?>
-            </select> 
+            </select>
         </td>
         <td><?=\Yii::$app->catalog->currencyPrice($v->item, "price", '<span class="itemPrice">$</span>', '', \Yii::$app->params['cart']['cartPrice'][$v->id]*$v->qty);?></td>
     </tr>
